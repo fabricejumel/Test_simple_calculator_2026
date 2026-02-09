@@ -1,0 +1,7 @@
+[tool.setuptools.packages.find]
+where = ["src"]  # Cherche packages dans src/
+
+# OU explicite
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["calculator"]
