@@ -2,6 +2,7 @@
 
 Author: Fabrice JUMEL
 """
+
 import unittest
 from calculator import SimpleCalculator
 
@@ -132,7 +133,7 @@ class TestSimpleCalculator(unittest.TestCase):
 
     def test_divide_valid_result_float(self):
         """Test division résultat float."""
-        self.assertEqual(self.calc.divide(10, 3), 10/3)
+        self.assertEqual(self.calc.divide(10, 3), 10 / 3)
         self.assertEqual(self.calc.divide(7, 2), 3.5)
         self.assertAlmostEqual(self.calc.divide(1, 3), 0.333333, places=5)
 
@@ -188,10 +189,10 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertIsInstance(self.calc.fsum(2, 3), int)
         self.assertIsInstance(self.calc.substract(5, 3), int)
         self.assertIsInstance(self.calc.multiply(4, 3), int)
-        
+
         # divide retourne float
         self.assertIsInstance(self.calc.divide(10, 2), float)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main(verbosity=2)
