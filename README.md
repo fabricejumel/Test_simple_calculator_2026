@@ -1,6 +1,6 @@
 # Calculator - Framework Test Complet
 
-> Projet pédagogique Administation des Codes  2026 - Découverte écosystème test Python vers CI/CD
+> Projet pédagogique Administation des Codes  2026 - Découverte écosystème test Python vers CI/CD - testé sous linux (Ubuntu 24.04)
 
 ## 🎯 Objectifs Pédagogiques
 
