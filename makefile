@@ -8,10 +8,10 @@ format-check:
 	python -m black --check src/ tests/
 
 lint:
-	python -m pylint src/ tests/
+	python -m pylint -v src/ tests/
 
 test:
-	python -m pytest \
+	python -m pytest -v \
 		--cov=src/calculator \
 		--cov-branch \
 		--cov-report=term-missing \
