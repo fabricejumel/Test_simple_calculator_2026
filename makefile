@@ -15,6 +15,9 @@ help:
 	@echo "Nettoyage:"
 	@echo "  make clean        - Suppression fichiers temporaires"
 
+##################################################
+# INSTALLATION / DESINSTALLATION
+##################################################
 install:
 	@echo "📦 Installation production..."
 	pip install --upgrade pip
@@ -34,12 +37,59 @@ install-dev:
 	@echo "✅ Package éditable + outils dev installés"
 
 
-
+##################################################
+# REFORMATAGE
+##################################################
 format-check: 
 	python -m black --check src/ tests/
 
+##################################################
+# Qualité du code
+##################################################
+
 lint: 
 	python -m pylint -v src/ tests/
+
+
+##################################################
+# MÉTRIQUES RADON (LECTURE, MAINTENABILITE)
+##################################################
+
+complexity:
+	@echo "📊 Complexité cyclomatique (McCabe):"
+	@radon cc -s -a src/ tests/
+	@echo ""
+
+maintainability:
+	@echo "🔧 Index de maintenabilité:"
+	@radon mi -s src/ tests/
+	@echo ""
+
+metrics:
+	@echo "📏 Métriques brutes (LOC):"
+	@radon raw -s src/ tests/
+	@echo ""
+
+halstead:
+	@echo "🧮 Métriques Halstead:"
+	@radon hal src/ tests/
+	@echo ""
+
+metrics-all:
+	@echo "════════════════════════════════════════════════════════════"
+	@echo "📈 ANALYSE COMPLÈTE MÉTRIQUES CODE"
+	@echo "════════════════════════════════════════════════════════════"
+	@echo ""
+	@$(MAKE) complexity
+	@$(MAKE) maintainability
+	@$(MAKE) metrics
+	@$(MAKE) halstead
+	@echo "════════════════════════════════════════════════════════════"
+	@echo "✅ Analyse métriques terminée"
+	@echo "════════════════════════════════════════════════════════════"
+
+
+
 
 test: 
 	python -m pytest -v \
