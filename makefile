@@ -1,5 +1,19 @@
 .PHONY: install install-dev format-check lint test clean
 
+help:
+	@echo "Installation:"
+	@echo "  make install      - Installation production"
+	@echo "  make install-dev  - Installation développement"
+	@echo "  make uninstall    - Désinstalle package"
+	@echo ""
+	@echo "Développement:"
+	@echo "  make test         - Lance tests"
+	@echo "  make lint         - Vérifie qualité"
+	@echo "  make format       - Formate code"
+	@echo "  make ci           - Pipeline complet"
+	@echo ""
+	@echo "Nettoyage:"
+	@echo "
 
 install:
 	@echo "📦 Installation production..."
@@ -7,12 +21,18 @@ install:
 	pip install .
 	@echo "✅ Package installé"
 
+uninstall:
+	@echo "🗑️  Désinstallation package..."
+	pip uninstall -y TestSimpleCalculator_2026_FJ
+	@echo "✅ Package désinstallé"
+
 # Développement (éditable, avec outils test)
 install-dev:
 	@echo "📦 Installation développement..."
 	pip install --upgrade pip
 	pip install -e .[test]
 	@echo "✅ Package éditable + outils dev installés"
+
 
 
 format-check: 
