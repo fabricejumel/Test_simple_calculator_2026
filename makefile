@@ -6,7 +6,7 @@ help:
 	@echo "  make install-dev  - Installation développement"
 	@echo "  make uninstall    - Désinstalle package"
 	@echo ""
-	@echo "Développement:"
+	@echo "Commandes Développement:" (nécessite l'installtion en mode développement)
 	@echo "  make test         - Lance tests"
 	@echo "  make lint         - Vérifie qualité"
 	@echo "  make format       - Formate code"
