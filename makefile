@@ -11,6 +11,7 @@ help:
 	@echo "  make lint         - Vérifie qualité"
 	@echo "  make format       - Formate code"
 	@echo "  make ci           - Pipeline complet"
+    @echo "  make metrics-all  - Test de maintenibilité/complexité"
 	@echo ""
 	@echo "Nettoyage:"
 	@echo "  make clean        - Suppression fichiers temporaires"
