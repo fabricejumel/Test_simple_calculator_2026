@@ -19,10 +19,10 @@ class SimpleCalculator:
 
         Returns:
             Somme des deux entiers.
-        
+
         Raises:
             TypeError: Si paramètres non entiers.
-        
+
         Examples:
             >>> calc = SimpleCalculator()
             >>> calc.fsum(2, 3)
@@ -31,7 +31,9 @@ class SimpleCalculator:
             Traceback: TypeError: Parameters must be integers
         """
         if not isinstance(int_a, int) or not isinstance(int_b, int):
-            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+            raise TypeError(
+                f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}"
+            )
         return int_a + int_b
 
     def substract(self, int_a: int, int_b: int) -> int:
@@ -41,7 +43,9 @@ class SimpleCalculator:
             TypeError: Si paramètres non entiers.
         """
         if not isinstance(int_a, int) or not isinstance(int_b, int):
-            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+            raise TypeError(
+                f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}"
+            )
         return int_a - int_b
 
     def multiply(self, int_a: int, int_b: int) -> int:
@@ -51,7 +55,9 @@ class SimpleCalculator:
             TypeError: Si paramètres non entiers.
         """
         if not isinstance(int_a, int) or not isinstance(int_b, int):
-            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+            raise TypeError(
+                f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}"
+            )
         return int_a * int_b
 
     def divide(self, int_a: int, int_b: int) -> float:
@@ -62,8 +68,9 @@ class SimpleCalculator:
             ZeroDivisionError: Si int_b == 0.
         """
         if not isinstance(int_a, int) or not isinstance(int_b, int):
-            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+            raise TypeError(
+                f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}"
+            )
         if int_b == 0:
             raise ZeroDivisionError("Division par zéro impossible")
         return int_a / int_b
-
