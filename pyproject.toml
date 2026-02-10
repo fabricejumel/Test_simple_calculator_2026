@@ -1,7 +1,17 @@
-[tool.setuptools.packages.find]
-where = ["src"]  # Cherche packages dans src/
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
-# OU explicite
-[tool.setuptools]
-package-dir = {"" = "src"}
-packages = ["calculator"]
+[project]
+name = "TestSimpleCalculatorBx"
+version = "0.0.1"
+authors = [{name = "Fabrice Jumel"}]
+description = "Simple calculator for packaging demo"
+license = {text = "Unlicense"}
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-cov", "pylint", "black"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
