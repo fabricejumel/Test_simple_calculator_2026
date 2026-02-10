@@ -5,7 +5,6 @@ Simple calculator class for basic arithmetic operations.
 
 Author: Fabrice JUMEL
 """
-from typing import Union
 
 
 class SimpleCalculator:
