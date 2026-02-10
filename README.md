@@ -1,140 +1,166 @@
-# Test_simple_calculator_2026
+# Calculator - Framework Test Complet
 
-Mode developpeur 
-#installation
-git clone httos://github.com:fabricejumel/Test_simple_calculator_2026.git
+> Projet pédagogique Administation des Codes  2026 - Découverte écosystème test Python vers CI/CD
 
-cd Test_simple_calculator_2026
+## 🎯 Objectifs Pédagogiques
+
+Ce projet démontre un **framework de test complet** utilisable en industrie :
+
+- ✅ **Tests unitaires** (pytest)
+- ✅ **Couverture code** (100% branches)
+- ✅ **Qualité code** (pylint, black)
+- ✅ **Performance** (benchmarks, profiling)
+- ✅ **CI/CD** (GitLab pipelines)
+- ✅ **Automation** (Makefile)
+
+## 📚 Installation
+
+\`\`\`bash
+# Clone projet
+git clone https://gitlab.com/admco/calculator.git
+cd calculator
+
+# Setup environnement
 python -m venv .venv
-source .venv/bin/activate
-pip install -e .[test]
+source .venv/bin/activate  # Linux/Mac
+# .venv\Scripts\activate   # Windows
 
-python -m pytest -vv --cov --cov-branch --cov-report=term-missing  --durations=0
-============================================================================================================ test session starts ============================================================================================================
-platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0 -- /home/astro/wp_admco_2026/Test_simple_calculator_2026/.venv/bin/python
-cachedir: .pytest_cache
-rootdir: /home/astro/wp_admco_2026/Test_simple_calculator_2026
-configfile: pyproject.toml
-testpaths: tests
-plugins: cov-7.0.0
-collected 26 items
+# Installe dépendances
+make install
+\`\`\`
 
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_float PASSED                                                                                                                                               [  3%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_string PASSED                                                                                                                                              [  7%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_by_one PASSED                                                                                                                                                [ 11%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_negative PASSED                                                                                                                                              [ 15%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_positive PASSED                                                                                                                                              [ 19%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_result_float PASSED                                                                                                                                          [ 23%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_denominator PASSED                                                                                                                                            [ 26%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_numerator PASSED                                                                                                                                              [ 30%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_bool PASSED                                                                                                                                                  [ 34%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_float PASSED                                                                                                                                                 [ 38%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_none PASSED                                                                                                                                                  [ 42%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_string PASSED                                                                                                                                                [ 46%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_negative PASSED                                                                                                                                                [ 50%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_positive PASSED                                                                                                                                                [ 53%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_zero PASSED                                                                                                                                                    [ 57%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_large_numbers PASSED                                                                                                                                                      [ 61%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_invalid_types PASSED                                                                                                                                             [ 65%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_negative PASSED                                                                                                                                            [ 69%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_one PASSED                                                                                                                                                 [ 73%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_positive PASSED                                                                                                                                            [ 76%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_zero PASSED                                                                                                                                                [ 80%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_invalid_types PASSED                                                                                                                                            [ 84%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_negative PASSED                                                                                                                                           [ 88%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_positive PASSED                                                                                                                                           [ 92%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_zero PASSED                                                                                                                                               [ 96%]
-tests/test_simple_calculator.py::TestSimpleCalculator::test_type_consistency PASSED                                                                                                                                                   [100%]
+## 🚀 Commandes Rapides
 
-============================================================================================================== tests coverage ===============================================================================================================
-______________________________________________________________________________________________ coverage: platform linux, python 3.12.3-final-0 ______________________________________________________________________________________________
+\`\`\`bash
+# Aide
+make help
 
-Name                                  Stmts   Miss Branch BrPart  Cover   Missing
----------------------------------------------------------------------------------
-src/calculator/__init__.py                3      0      0      0   100%
-src/calculator/simple_calculator.py      19      0     10      0   100%
-tests/test_simple_calculator.py         123      1      2      1    98%   198
----------------------------------------------------------------------------------
-TOTAL                                   145      1     12      1    99%
-============================================================================================================= slowest durations =============================================================================================================
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_float
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_float
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_none
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_one
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_string
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_bool
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_negative
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_result_float
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_large_numbers
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_negative
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_positive
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_denominator
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_positive
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_by_one
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_invalid_types
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_float
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_float
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_negative
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_invalid_types
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_string
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_positive
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_positive
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_zero
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_string
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_positive
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_type_consistency
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_numerator
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_zero
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_none
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_string
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_type_consistency
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_type_consistency
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_result_float
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_invalid_types
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_negative
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_positive
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_numerator
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_positive
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_denominator
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_by_one
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_invalid_string
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_zero
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_negative
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_negative
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_float
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_one
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_positive
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_invalid_types
-0.00s setup    tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_negative
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_string
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_positive
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_zero
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_zero
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_large_numbers
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_float
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_zero
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_negative
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_invalid_types
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_bool
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_negative
-0.00s call     tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_by_one
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_bool
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_negative
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_positive
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_negative
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_numerator
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_invalid_none
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_large_numbers
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_one
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_positive
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_negative
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_zero_denominator
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_positive
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_divide_valid_result_float
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_valid_zero
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_fsum_valid_zero
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_multiply_valid_zero
-0.00s teardown tests/test_simple_calculator.py::TestSimpleCalculator::test_substract_invalid_types
-============================================================================================================ 26 passed in 0.11s =============================================================================================================
+# Tests basiques
+make test
 
+# Pipeline complet
+make all
+\`\`\`
 
+## 📖 Parcours Apprentissage
+
+### Niveau 1 : Tests Basiques
+
+\`\`\`bash
+make test       # Lance tests
+make cov-html   # Voir couverture
+\`\`\`
+
+**Concepts** : Tests unitaires, assertions, coverage
+
+---
+
+### Niveau 2 : Qualité Code
+
+\`\`\`bash
+make format     # Formate code
+make lint       # Vérifie qualité
+make all        # Pipeline complet
+\`\`\`
+
+**Concepts** : PEP8, linting, formatage automatique
+
+---
+
+### Niveau 3 : Performance (Optionnel)
+
+\`\`\`bash
+make perf       # Durée tests
+make bench      # Benchmarks
+make profile    # Profiling CPU
+\`\`\`
+
+**Concepts** : Optimisation, profiling, comparaison algo
+
+---
+
+## 🛠️ Outils Inclus
+
+| Outil | Usage | Obligatoire ? |
+|-------|-------|---------------|
+| **pytest** | Tests unitaires | ✅ Oui |
+| **pytest-cov** | Couverture code | ✅ Oui |
+| **pylint** | Analyse qualité | ✅ Oui |
+| **black** | Formatage auto | ✅ Oui |
+| **pytest-benchmark** | Benchmarks | ⚠️ Optionnel |
+| **pytest-profiling** | Profiling CPU | ⚠️ Optionnel |
+| **pytest-memray** | Profiling mémoire | ⚠️ Optionnel |
+
+## 📊 Standards Qualité
+
+- ✅ Coverage ≥ 95% (branches)
+- ✅ Pylint score ≥ 9.0
+- ✅ Formatage black (line 100)
+- ✅ Python ≥ 3.10
+
+## 🎓 Ressources
+
+- [Documentation pytest](https://docs.pytest.org/)
+- [Guide coverage](https://coverage.readthedocs.io/)
+- [PEP8 Style Guide](https://pep8.org/)
+
+## 👥 Contribution
+
+Ce framework est un **exemple pédagogique**. Les élèves peuvent :
+- Utiliser seulement les outils de base (pytest, pylint)
+- Expérimenter avec outils avancés (benchmark, profiling)
+- Personnaliser selon besoins projet
+\`\`\`
+
+---
+
+## Usage Pédagogique
+
+### TP Niveau 1 (Débutant)
+
+**Consigne** :
+> Utilisez seulement `make test` et `make cov-html`
+
+**Élève découvre** :
+- Tests passent/échouent
+- Coverage montre lignes testées
+- Vert/rouge HTML
+
+---
+
+### TP Niveau 2 (Intermédiaire)
+
+**Consigne** :
+> Pipeline complet : `make all`
+
+**Élève découvre** :
+- Black formate automatiquement
+- Pylint signale problèmes qualité
+- Pipeline = enchaînement outils
+
+---
+
+### TP Niveau 3 (Avancé)
+
+**Consigne** :
+> Comparez 2 algorithmes avec `make bench`
+
+**Élève découvre** :
+- Mesure performance
+- Compare versions
+- Justifie choix algo
+
+---
+
+## Résumé
+
+**Framework complet = OUI pour pédagogie** ✅
+
+**Avantages** :
+- ✅ Découverte écosystème complet
+- ✅ Expérimentation guidée
+- ✅ Standards industrie
+- ✅ Portfolio professionnel
+- ✅ Scalabilité apprentissage
+
+**Structure** :
