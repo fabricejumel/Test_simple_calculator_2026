@@ -1,16 +1,27 @@
-.PHONY: install format-check lint test clean
+.PHONY: install install-dev format-check lint test clean
+
 
 install:
+	@echo "📦 Installation production..."
+	pip install --upgrade pip
+	pip install .
+	@echo "✅ Package installé"
+
+# Développement (éditable, avec outils test)
+install-dev:
+	@echo "📦 Installation développement..."
 	pip install --upgrade pip
 	pip install -e .[test]
+	@echo "✅ Package éditable + outils dev installés"
 
-format-check:
+
+format-check: install-dev
 	python -m black --check src/ tests/
 
-lint:
+lint: install-dev
 	python -m pylint -v src/ tests/
 
-test:
+test: install-dev
 	python -m pytest -v \
 		--cov=src/calculator \
 		--cov-branch \
@@ -22,5 +33,5 @@ ci: format-check lint test
 	@echo "✅ Pipeline CI OK"
 
 clean:
-	rm -rf .pytest_cache .coverage htmlcov/
+	rm -rf .pytest_cache .coverage coverage.xml htmlcov/ 
 
