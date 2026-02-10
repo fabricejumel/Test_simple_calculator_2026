@@ -1,7 +1,7 @@
 """TestSimpleCalculatorBx - Simple calculator for packaging demo.
 
 Author: Fabrice Jumel
-License: Unlicence 
+License: Unlicense 
 """
 from .simple_calculator import SimpleCalculator
 
