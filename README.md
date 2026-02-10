@@ -23,7 +23,7 @@ Les 2 pipelines exécutent :
 
 \`\`\`bash
 # Clone (GitLab ou GitHub)
-git clone https://gitlab.com/user/calculator.git
+git clone https://gitlab.com//fabricejumel/Test_simple_calculator_2026.git // TODO
 # ou
 git clone https://github.com/fabricejumel/Test_simple_calculator_2026.git
 
