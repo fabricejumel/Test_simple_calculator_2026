@@ -1,51 +1,57 @@
-# Calculator - Framework Test Complet
+# Calculator
 
-> Projet pédagogique Administation des Codes  2026 - Découverte écosystème test Python vers CI/CD - testé sous linux (Ubuntu 24.04)
+[![GitLab CI](https://gitlab.com/user/calculator/badges/main/pipeline.svg)](https://gitlab.com/user/calculator/-/pipelines)
+[![GitHub Actions](https://github.com/user/calculator/actions/workflows/ci.yml/badge.svg)](https://github.com/user/calculator/actions)
+[![Coverage](https://codecov.io/gh/user/calculator/branch/main/graph/badge.svg)](https://codecov.io/gh/user/calculator)
 
-## 🎯 Objectifs Pédagogiques
+> Calculatrice simple - CI/CD multi-plateforme (GitLab + GitHub)
 
-Ce projet démontre un **framework de test complet** utilisable en industrie :
+## 🚀 CI/CD
 
-- ✅ **Tests unitaires** (pytest)
-- ✅ **Couverture code** (100% branches)
-- ✅ **Qualité code** (pylint, black)
-- ✅ **Performance** (benchmarks, profiling)
-- ✅ **CI/CD** (GitLab pipelines)
-- ✅ **Automation** (Makefile)
+Ce projet utilise **double CI/CD** :
 
-## 🛠️ Outils Inclus
+- ✅ **GitLab CI** (`.gitlab-ci.yml`)
+- ✅ **GitHub Actions** (`.github/workflows/ci.yml`)
 
-| Outil | Usage | Obligatoire ? |
-|-------|-------|---------------|
-| **pytest** | Tests unitaires | ✅ Oui |
-| **pytest-cov** | Couverture code | ✅ Oui |
-| **pylint** | Analyse qualité | ✅ Oui |
-| **black** | Formatage auto | ✅ Oui |
-| **pytest-benchmark** | Benchmarks | ⚠️ Optionnel |
-| **pytest-profiling** | Profiling CPU | ⚠️ Optionnel |
-| **pytest-memray** | Profiling mémoire | ⚠️ Optionnel |
+Les 2 pipelines exécutent :
+1. Format check (black)
+2. Lint (pylint ≥9.0)
+3. Tests (pytest coverage ≥95%)
 
-## 📊 Standards Qualité
+## 📦 Dépôts
 
-- ✅ Coverage ≥ 95% (branches)
-- ✅ Pylint score ≥ 9.0
-- ✅ Formatage black (line 100)
-- ✅ Python ≥ 3.10
+- GitLab: https://gitlab.com/user/calculator
+- GitHub: https://github.com/user/calculator
 
-## 🎓 Ressources
+## 🛠️ Installation
 
-- [Documentation pytest](https://docs.pytest.org/)
-- [Guide coverage](https://coverage.readthedocs.io/)
-- [PEP8 Style Guide](https://pep8.org/)
+\`\`\`bash
+# Clone (GitLab ou GitHub)
+git clone https://gitlab.com/user/calculator.git
+# ou
+git clone https://github.com/user/calculator.git
 
-## 👥 Contribution
+cd calculator
+make install
+\`\`\`
 
-Ce framework est un **exemple pédagogique**. Les élèves peuvent :
-- Utiliser seulement les outils de base (pytest, pylint)
-- Expérimenter avec outils avancés (benchmark, profiling)
-- Personnaliser selon besoins projet
+## 🧪 Tests
+
+\`\`\`bash
+make test    # Tests
+make lint    # Qualité
+make all     # Pipeline complet
+\`\`\`
 \`\`\`
 
 ---
 
+## Différences Subtiles
 
+### Cache
+
+**GitLab** :
+```yaml
+cache:
+  paths:
+    - .venv/
