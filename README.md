@@ -25,7 +25,7 @@ Les 2 pipelines exécutent :
 # Clone (GitLab ou GitHub)
 git clone https://gitlab.com/user/calculator.git
 # ou
-git clone https://github.com/user/calculator.git
+git clone https://github.com/fabricejumel/Test_simple_calculator_2026.git
 
 cd calculator
 make install
