@@ -5,24 +5,13 @@ Simple calculator class for basic arithmetic operations.
 
 Author: Fabrice JUMEL
 """
-import tomllib
 from typing import Union
 
 
 class SimpleCalculator:
     """Calculatrice simple (+, -, *, /) avec validation entrées."""
 
-    def __init__(self, config_path: str = "config.toml"):
-        """Initialise calculatrice avec config TOML.
-        
-        Args:
-            config_path: Chemin fichier config TOML.
-        """
-        with open(config_path, 'rb') as f:
-            self.cfg = tomllib.load(f).get('calculator', {})
-        self.strict_int = self.cfg.get('strict_integers', True)
-
-    def fsum(self, int_a: int, int_b: int) -> Union[int, str]:
+    def fsum(self, int_a: int, int_b: int) -> int:
         """Additionne deux entiers.
 
         Args:
@@ -30,64 +19,52 @@ class SimpleCalculator:
             int_b: Deuxième entier.
 
         Returns:
-            Somme des deux entiers ou "ERROR" si types invalides.
+            Somme des deux entiers.
+        
+        Raises:
+            TypeError: Si paramètres non entiers.
         
         Examples:
             >>> calc = SimpleCalculator()
             >>> calc.fsum(2, 3)
             5
+            >>> calc.fsum(2.5, 3)
+            Traceback: TypeError: Parameters must be integers
         """
-        if isinstance(int_a, int) and isinstance(int_b, int):
-            return int_a + int_b
-        return "ERROR"
+        if not isinstance(int_a, int) or not isinstance(int_b, int):
+            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+        return int_a + int_b
 
-    def substract(self, int_a: int, int_b: int) -> Union[int, str]:
+    def substract(self, int_a: int, int_b: int) -> int:
         """Soustrait int_b de int_a.
 
-        Args:
-            int_a: Entier à soustraire de.
-            int_b: Entier à soustraire.
-
-        Returns:
-            Différence int_a - int_b ou "ERROR".
+        Raises:
+            TypeError: Si paramètres non entiers.
         """
-        if isinstance(int_a, int) and isinstance(int_b, int):
-            return int_a - int_b
-        return "ERROR"
+        if not isinstance(int_a, int) or not isinstance(int_b, int):
+            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+        return int_a - int_b
 
-    def multiply(self, int_a: int, int_b: int) -> Union[int, str]:
+    def multiply(self, int_a: int, int_b: int) -> int:
         """Multiplie deux entiers.
 
-        Args:
-            int_a: Premier entier.
-            int_b: Deuxième entier.
-
-        Returns:
-            Produit int_a * int_b ou "ERROR".
+        Raises:
+            TypeError: Si paramètres non entiers.
         """
-        if isinstance(int_a, int) and isinstance(int_b, int):
-            return int_a * int_b
-        return "ERROR"
+        if not isinstance(int_a, int) or not isinstance(int_b, int):
+            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+        return int_a * int_b
 
-    def divide(self, int_a: int, int_b: int) -> Union[float, str]:
+    def divide(self, int_a: int, int_b: int) -> float:
         """Divise int_a par int_b.
 
-        Args:
-            int_a: Numérateur (entier).
-            int_b: Dénominateur (entier non nul).
-
-        Returns:
-            Quotient int_a / int_b (float) ou "ERROR".
-        
         Raises:
+            TypeError: Si paramètres non entiers.
             ZeroDivisionError: Si int_b == 0.
-        
-        Examples:
-            >>> calc.divide(10, 2)
-            5.0
         """
-        if isinstance(int_a, int) and isinstance(int_b, int):
-            if int_b == 0:
-                raise ZeroDivisionError("Division par zéro impossible")
-            return int_a / int_b
-        return "ERROR"
+        if not isinstance(int_a, int) or not isinstance(int_b, int):
+            raise TypeError(f"Parameters must be integers, got {type(int_a).__name__}, {type(int_b).__name__}")
+        if int_b == 0:
+            raise ZeroDivisionError("Division par zéro impossible")
+        return int_a / int_b
+
