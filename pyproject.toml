@@ -11,7 +11,7 @@ license = {text = "Unlicense"}
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
-test = ["pytest>=7.0", "pytest-cov", "pylint", "black]
+test = ["pytest>=7.0", "pytest-cov", "pylint", "black", "radon"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
