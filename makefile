@@ -15,13 +15,13 @@ install-dev:
 	@echo "✅ Package éditable + outils dev installés"
 
 
-format-check: install-dev
+format-check: 
 	python -m black --check src/ tests/
 
-lint: install-dev
+lint: 
 	python -m pylint -v src/ tests/
 
-test: install-dev
+test: 
 	python -m pytest -v \
 		--cov=src/calculator \
 		--cov-branch \
