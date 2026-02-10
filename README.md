@@ -1,9 +1,5 @@
 # Calculator
 
-[![GitLab CI](https://gitlab.com/user/calculator/badges/main/pipeline.svg)](https://gitlab.com/user/calculator/-/pipelines)
-[![GitHub Actions](https://github.com/user/calculator/actions/workflows/ci.yml/badge.svg)](https://github.com/user/calculator/actions)
-[![Coverage](https://codecov.io/gh/user/calculator/branch/main/graph/badge.svg)](https://codecov.io/gh/user/calculator)
-
 > Calculatrice simple - CI/CD multi-plateforme (GitLab + GitHub)
 
 ## 🚀 CI/CD
