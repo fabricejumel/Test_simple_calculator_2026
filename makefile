@@ -13,7 +13,7 @@ help:
 	@echo "  make ci           - Pipeline complet"
 	@echo ""
 	@echo "Nettoyage:"
-	@echo "
+	@echo "  make clean        - Suppression fichiers temporaires"
 
 install:
 	@echo "📦 Installation production..."
