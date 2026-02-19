@@ -9,6 +9,7 @@ help:
 	@echo "Commandes Développement: (nécessite l'installtion en mode développement)"
 	@echo "  make test         - Lance tests"
 	@echo "  make lint         - Vérifie qualité"
+	@echo "  make format       - Vérifie formatage code"
 	@echo "  make format       - Formate code"
 	@echo "  make ci           - Pipeline complet"
 	@echo "  make metrics-all  - Test de maintenibilité/complexité"
@@ -43,6 +44,8 @@ install-dev:
 ##################################################
 format-check: 
 	python -m black --check src/ tests/
+format: 
+	python -m black src/ tests/
 
 ##################################################
 # Qualité du code
