@@ -33,10 +33,7 @@ Les 2 pipelines exécutent :
 2. Lint (pylint ≥9.0)
 3. Tests (pytest coverage ≥95%)
 
-## 📦 Dépôts
 
-- GitLab: https://gitlab.com/user/calculator
-- GitHub: https://github.com/user/calculator
 
 ## 🛠️ Installation
 
