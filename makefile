@@ -135,7 +135,7 @@ setup-pypirc:
 	else \
 	  server="pypi"; \
 	fi; \
-	printf "Token $$server (pypi-A... ou testpypi-A...): "; \
+	printf "Token $$server (pypi-A... ): "; \
 	stty -echo; read token; stty echo; printf "\n"; \
 	printf "[distutils]\nindex-servers =\n    %s\n\n[%s]\nusername = __token__\npassword = %s\n" \
 	    "$$server" "$$server" "$$token" > ~/.pypirc; \
