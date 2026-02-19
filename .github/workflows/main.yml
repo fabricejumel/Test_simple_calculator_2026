@@ -79,7 +79,7 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
       run: 
-        make install-dev|
+        make install-dev
         make deploy-test
 
   deploy-pypi:
@@ -97,6 +97,6 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
-        make install-dev|
+        make install-dev
         make deploy-test
         
