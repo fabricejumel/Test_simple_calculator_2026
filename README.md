@@ -4,6 +4,25 @@
 
 ## 🚀 CI/CD
 
+### ☁️ CI/CD Automatique
+
+**GitHub Actions** & **GitLab CI** → Tests auto + deploy TestPyPI (`main`) / PyPI (`tag`).
+
+#### Configuration Tokens PyPI (Obligatoire)
+
+**1. Générez tokens** :
+- [PyPI](https://pypi.org/manage/account/token/) → `PYPI_TOKEN`
+- [TestPyPI](https://test.pypi.org/manage/account/token/) → `TESTPYPI_TOKEN`
+- **Scope** : Project `TestSimpleCalculator_2026_FJ` > Entire index
+
+**2. GitHub Secrets** (Repo > Settings > Secrets and variables > Actions) :
+TEST_PYPI_TOKEN # TestPyPI token
+PYPI_TOKEN # PyPI token (prod)
+
+**3. GitLab Variables** (Project > Settings > CI/CD > Variables) :
+TESTPYPI_TOKEN # TestPyPI (Protected/Masked)
+PYPI_TOKEN # PyPI (Protected/Masked)
+
 Ce projet utilise **double CI/CD** :
 
 - ✅ **GitLab CI** (`.gitlab-ci.yml`)
