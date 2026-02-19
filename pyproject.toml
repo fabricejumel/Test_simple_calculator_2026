@@ -7,6 +7,7 @@ name = "TestSimpleCalculator_2026_FJ"
 version = "0.0.1"
 authors = [{name = "Fabrice Jumel"}]
 description = "Simple calculator for packaging demo"
+readme= README.md
 license = {text = "Unlicense"}
 requires-python = ">=3.10"
 
