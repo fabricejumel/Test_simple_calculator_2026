@@ -18,6 +18,7 @@
 **2. GitHub Secrets** (Repo > Settings > Secrets and variables > Actions) :
 TEST_PYPI_TOKEN # TestPyPI token
 PYPI_TOKEN # PyPI token (prod)
+Pour github , on pourrait proceder a l'associer des comptes pypi et github pour rendre tout cela transparent 
 
 **3. GitLab Variables** (Project > Settings > CI/CD > Variables) :
 TESTPYPI_TOKEN # TestPyPI (Protected/Masked)
