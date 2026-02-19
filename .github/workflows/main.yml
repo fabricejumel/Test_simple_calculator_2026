@@ -98,5 +98,5 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
         make install-dev
-        make deploy-test
+        make deploy
         
