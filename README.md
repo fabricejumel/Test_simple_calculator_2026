@@ -15,7 +15,7 @@
 - [TestPyPI](https://test.pypi.org/manage/account/token/) → `TESTPYPI_TOKEN`
 - **Scope** : Project `TestSimpleCalculator_2026_FJ` > Entire index
 
-**2. GitHub Secrets** (Repo > Settings > Secrets and variables > Actions) :
+**2. GitHub Secrets** (Repo > Settings > Secrets and variables > Actions Secrets → New repository secret) : 
 TEST_PYPI_TOKEN # TestPyPI token
 PYPI_TOKEN # PyPI token (prod)
 Pour github , on pourrait proceder a l'associer des comptes pypi et github pour rendre tout cela transparent 
