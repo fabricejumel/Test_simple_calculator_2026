@@ -26,7 +26,6 @@ jobs:
         cache-dependency-path: pyproject.toml
     - name: Install & Test
       run: |
-        pip install --upgrade pip
         make install-dev
         make ci
 
@@ -40,7 +39,6 @@ jobs:
         cache: 'pip'
     - name: Metrics
       run: |
-        pip install --upgrade pip
         make install-dev
         make metrics-all
 
@@ -55,8 +53,6 @@ jobs:
         cache: 'pip'
     - name: Build
       run: |
-        sudo apt-get update -qq
-        sudo apt-get install -y build-essential
         make install-dev
         make build
     - uses: actions/upload-artifact@v4
@@ -79,7 +75,6 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ vars.TESTPYPI_TOKEN }}
       run: |
-        env
         make install-dev
         make deploy-test
 
