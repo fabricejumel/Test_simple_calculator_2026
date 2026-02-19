@@ -79,14 +79,8 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
       run: |
+        env
         make install-dev
-        cat > ~/.pypirc << EOF
-        [distutils]
-        index-servers = testpypi
-        [testpypi]
-        username = $TWINE_USERNAME
-        password = $TWINE_PASSWORD
-        EOF
         make deploy-test
 
   deploy-pypi:
