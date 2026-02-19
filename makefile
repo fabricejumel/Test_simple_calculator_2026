@@ -126,23 +126,21 @@ build: clean-build
 	@echo "📦 Construction du package..."
 	python -m build
 	@echo "✅ Package construit dans dist/"
+
 setup-pypirc:
 	@echo "🔑 Configuration .pypirc pour PyPI/TestPyPI"
-	@read -p "Choisissez (1=TestPyPI, 2=PyPI): " choix; \
+	@printf "Choisissez (1=TestPyPI, 2=PyPI): "; read choix; \
 	if [ "$$choix" = "1" ]; then \
-	  server="testpypi"; url="https://test.pypi.org/legacy/"; \
+	  server="testpypi"; \
 	else \
-	  server="pypi"; url="https://pypi.org/legacy/"; \
+	  server="pypi"; \
 	fi; \
-	read -s -p "Entrez le token $$server (pypi-A...): " token; echo; \
-	echo "[distutils]" > ~/.pypirc; \
-	echo "index-servers =" >> ~/.pypirc; \
-	echo "    $$server" >> ~/.pypirc; \
-	echo "" >> ~/.pypirc; \
-	echo "[$$server]" >> ~/.pypirc; \
-	echo "username = __token__" >> ~/.pypirc; \
-	echo "password = $$token" >> ~/.pypirc; \
+	printf "Token $$server (pypi-A... ou testpypi-A...): "; \
+	stty -echo; read token; stty echo; printf "\n"; \
+	printf "[distutils]\nindex-servers =\n    %s\n\n[%s]\nusername = __token__\npassword = %s\n" \
+	    "$$server" "$$server" "$$token" > ~/.pypirc; \
 	echo "✅ .pypirc créé pour $$server !"
+
 
 
 # Upload sur TestPyPI
