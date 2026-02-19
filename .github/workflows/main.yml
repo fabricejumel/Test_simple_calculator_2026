@@ -77,7 +77,7 @@ jobs:
     - name: Publish TestPyPI
       env:
         TWINE_USERNAME: __token__
-        TWINE_PASSWORD: ${{ vars.TEST_PYPI_TOKEN }}
+        TWINE_PASSWORD: ${{ vars.TESTPYPI_TOKEN }}
       run: |
         env
         make install-dev
