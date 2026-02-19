@@ -57,7 +57,7 @@ jobs:
       run: |
         sudo apt-get update -qq
         sudo apt-get install -y build-essential
-        pip install build twine wheel
+        make install-dev
         make build
     - uses: actions/upload-artifact@v4
       with:
@@ -78,8 +78,9 @@ jobs:
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_TOKEN }}
-      run: |
-        python -m twine upload --repository testpypi dist/*
+      run: 
+        make install-dev|
+        make deploy-test
 
   deploy-pypi:
     runs-on: ubuntu-latest
@@ -96,4 +97,6 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
-        python -m twine upload dist/*
+        make install-dev|
+        make deploy-test
+        
