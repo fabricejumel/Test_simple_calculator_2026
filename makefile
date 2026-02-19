@@ -16,6 +16,7 @@ help:
 	@echo ""
 	@echo "Packaging & Publication:"
 	@echo "  make build           - Construit le package (wheel + sdist)"
+	@echo "  setup-pypirc          - Creation du .pypirc en vue de la publicaiton sur PyPi ou PyPi test"
 	@echo "  make deploy-test     - Publie sur TestPyPI"
 	@echo "  make deploy          - Publie sur PyPI"
 	@echo ""
