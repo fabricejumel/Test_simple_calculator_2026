@@ -1,4 +1,4 @@
-.PHONY: install install-dev format-check lint test clean
+.PHONY: install install-dev format-check lint test clean setup-pypirc
 
 help:
 	@echo "Installation:"
@@ -125,6 +125,24 @@ build: clean-build
 	@echo "📦 Construction du package..."
 	python -m build
 	@echo "✅ Package construit dans dist/"
+setup-pypirc:
+	@echo "🔑 Configuration .pypirc pour PyPI/TestPyPI"
+	@read -p "Choisissez (1=TestPyPI, 2=PyPI): " choix; \
+	if [ "$$choix" = "1" ]; then \
+	  server="testpypi"; url="https://test.pypi.org/legacy/"; \
+	else \
+	  server="pypi"; url="https://pypi.org/legacy/"; \
+	fi; \
+	read -s -p "Entrez le token $$server (pypi-A...): " token; echo; \
+	echo "[distutils]" > ~/.pypirc; \
+	echo "index-servers =" >> ~/.pypirc; \
+	echo "    $$server" >> ~/.pypirc; \
+	echo "" >> ~/.pypirc; \
+	echo "[$$server]" >> ~/.pypirc; \
+	echo "username = __token__" >> ~/.pypirc; \
+	echo "password = $$token" >> ~/.pypirc; \
+	echo "✅ .pypirc créé pour $$server !"
+
 
 # Upload sur TestPyPI
 deploy-test: build
