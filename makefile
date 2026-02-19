@@ -14,8 +14,14 @@ help:
 	@echo "  make ci           - Pipeline complet"
 	@echo "  make metrics-all  - Test de maintenibilité/complexité"
 	@echo ""
+	@echo "Packaging & Publication:"
+	@echo "  make build           - Construit le package (wheel + sdist)"
+	@echo "  make deploy-test     - Publie sur TestPyPI"
+	@echo "  make deploy          - Publie sur PyPI"
+	@echo ""
 	@echo "Nettoyage:"
-	@echo "  make clean        - Suppression fichiers temporaires"
+	@echo "  make clean           - Suppression fichiers temporaires"
+	@echo "  make clean-build     - Suppression dossiers build/dist"
 
 ##################################################
 # INSTALLATION / DESINSTALLATION
@@ -105,6 +111,39 @@ test:
 
 ci: format-check lint test
 	@echo "✅ Pipeline CI OK"
+
+##################################################
+# BUILD & DEPLOY
+##################################################
+
+# Nettoyage des builds
+clean-build:
+	rm -rf build/ dist/ *.egg-info
+
+# Construction du paquet (sdist + wheel)
+build: clean-build
+	@echo "📦 Construction du package..."
+	python -m build
+	@echo "✅ Package construit dans dist/"
+
+# Upload sur TestPyPI
+deploy-test: build
+	@echo "🚀 Déploiement sur TestPyPI..."
+	python -m twine upload --repository testpypi dist/*
+	@echo "✅ Déployé sur TestPyPI"
+
+# Upload sur PyPI (production)
+deploy: build
+	@echo "🚀 Déploiement sur PyPI..."
+	python -m twine upload dist/*
+	@echo "✅ Déployé sur PyPI"
+
+# Installation depuis TestPyPI (utile pour tester)
+install-test:
+	@echo "📥 Installation depuis TestPyPI..."
+	pip install --index-url https://test.pypi.org/simple/ \
+		--extra-index-url https://pypi.org/simple \
+		TestSimpleCalculator_2026_FJ
 
 clean:
 	rm -rf .pytest_cache .coverage coverage.xml htmlcov/ 
