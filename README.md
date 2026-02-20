@@ -252,21 +252,11 @@ Halstead Volume : ~150
 LOC production : 60  
 Tests : 26 méthodes  
 
+## 📦 PyPI (test)
+Usage direct pour l'installation
 
-## 🤝 Contribution
-
-1. Fork  
-2. make install-dev  
-3. make ci  
-4. Pull Request  
-
-## 📦 PyPI
-
-TestPyPI :
 pip install -i https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
 
-Production :
-make deploy-prod
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
 Fabrice JUMEL — Février 2026
