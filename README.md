@@ -45,6 +45,7 @@ TestSimpleCalculator_2026_FJ_GITHUB/
 │      └──main.yml
 ├── makefile
 ├── README.md
+├── pyproject.toml
 ├── src/
 │   └── calculator/
 │       ├── __init__.py
@@ -135,19 +136,59 @@ class SimpleCalculator:
         return int_a / int_b
 ```
 
-## 🧮 Fonctionnalités
+Pour transformer ce code en un package distribuable en  python (pip ) en utilisant les standards actuelelles. On a crée doit avoir la strcuture suivante :
 
-Classe SimpleCalculator (~60 LOC) :
-- fsum(a, b) → addition  
-- substract(a, b) → soustraction  
-- multiply(a, b) → multiplication  
-- divide(a, b) → division (ZeroDivisionError si /0)
+```bash
+├── pyproject.toml
+├── src/
+│   └── calculator/
+│       ├── __init__.py
+│       └── simple_calculator.py
+```
+avec 
 
-Caractéristiques :
-- Type hints stricts (int obligatoire)
-- Exceptions : TypeError, ZeroDivisionError
-- Docstrings avec doctests
-- divide() renvoie un float
+````python
+"""calculator__init__.py
+
+
+Author: Fabrice Jumel
+License: Unlicense
+"""
+
+from .simple_calculator import SimpleCalculator
+
+__version__ = "0.0.1"
+__all__ = ["SimpleCalculator"]
+
+````
+
+et 
+````python
+"""pyproject.toml"""
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TestSimpleCalculator_2026_FJ_GITHUB"
+version = "0.0.11"
+authors = [{name = "Fabrice Jumel"}]
+description = "Simple calculator for packaging demo"
+readme= "README.md"
+license = {text = "Unlicense"}
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-cov", "pylint", "black", "radon","build","twine"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+````
 
 ## 🧪 Tests unitaires (100% coverage)
 
