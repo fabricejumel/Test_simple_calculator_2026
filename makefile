@@ -1,4 +1,4 @@
-.PHONY: install install-dev format-check lint test clean setup-pypirc
+.PHONY: help install install-dev uninstall format complexity maintenability format-check lint test halstead clean setup-pypirc smoke-test metrics-all build
 
 help:
 	@echo "Installation:"
@@ -8,6 +8,7 @@ help:
 	@echo ""
 	@echo "Commandes Développement: (nécessite l'installtion en mode développement)"
 	@echo "  make test         - Lance tests"
+    @echo "  make testsmoke     -Lance un test simple en environnement production"
 	@echo "  make lint         - Vérifie qualité"
 	@echo "  make format-check - Vérifie formatage code"
 	@echo "  make format       - Formate code"
@@ -100,7 +101,9 @@ metrics-all:
 	@echo "════════════════════════════════════════════════════════════"
 
 
-
+##################################################
+# TEST, pytest, CI , smoke test
+##################################################
 
 test: 
 	python -m pytest -v \
@@ -112,6 +115,17 @@ test:
 
 ci: format-check lint test
 	@echo "✅ Pipeline CI OK"
+
+
+
+smoke-test: install  # Dépend de make install
+	@echo "🧪 Smoke test installation prod..."
+	python -c "
+from $(PACKAGE_MODULE) import $(MAIN_FUNC)  # e.g. calculator, add
+assert $(MAIN_FUNC)(1,1) == 2
+	print('✅ Imports & fonctions OK')
+	"
+	@echo "🎉 Smoke test passé !"
 
 ##################################################
 # BUILD & DEPLOY
