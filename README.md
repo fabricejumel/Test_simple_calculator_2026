@@ -1,33 +1,106 @@
-# Calculator Version GITHUB
+# TestSimpleCalculator_2026_FJ version GITHUB  
+Mini‑calculatrice Python (+, −, ×, ÷) utilisée pour démonstration de packaging moderne PyPI, couverture de tests complète et CI/CD professionnelle.  
+Auteur : Fabrice JUMEL (CPE Lyon) — License : Unlicense — Python ≥ 3.10
 
-> Calculatrice simple - CI/CD (GitHub)
+## 🚀 Installation
 
-## 🚀 CI/CD
+### Production
+pip install TestSimpleCalculator_2026_FJ_GITHUB
 
-### ☁️ CI/CD Automatique
+### Développement
+pip install -e .[test]
 
-**GitHub Actions** & **GitLab CI** → Tests auto + deploy TestPyPI (`main`) / PyPI (`tag`).
+### Test rapide
+from calculator import SimpleCalculator
+calc = SimpleCalculator()
+print(calc.fsum(2, 3))        # 5
+print(calc.divide(10, 2))     # 5.0
 
-#### Configuration Tokens PyPI (Obligatoire)
+## 📁 Structure du projet
 
-**1. Générez tokens** :
-- [PyPI](https://pypi.org/manage/account/token/) → `PYPI_TOKEN`
-- [TestPyPI](https://test.pypi.org/manage/account/token/) → `TESTPYPI_TOKEN`
+TestSimpleCalculator_2026_FJ_GITHUB/
+├── pyproject.toml
+├── Makefile
+├── README.md
+├── src/
+│   └── calculator/
+│       ├── __init__.py
+│       └── simple_calculator.py
+└── tests/
+    └── test_simple_calculator.py
 
+## 🧮 Fonctionnalités
 
-**2. GitHub Secrets** (Repo > Settings > Secrets and variables > Actions variable → New repository secret) : 
-TEST_PYPI_TOKEN # TestPyPI token
+Classe SimpleCalculator (~60 LOC) :
+- fsum(a, b) → addition  
+- substract(a, b) → soustraction  
+- multiply(a, b) → multiplication  
+- divide(a, b) → division (ZeroDivisionError si /0)
 
-Pour github , on pourrait proceder a l'associer des comptes pypi et github pour rendre tout cela transparent 
+Caractéristiques :
+- Type hints stricts (int obligatoire)
+- Exceptions : TypeError, ZeroDivisionError
+- Docstrings avec doctests
+- divide() renvoie un float
 
+## 🧪 Tests unitaires (100% coverage)
 
+26 tests unittest couvrant 100% des branches :
+- Cas valides : positifs, négatifs, zéros, grands nombres  
+- 12× TypeError, 3× ZeroDivisionError  
+- Edge cases : True + False = 1, divide(1,3)=0.333  
+- Vérification des types (assertIsInstance)
 
+Commande :
+make test
 
+## 🔧 Makefile (20+ commandes utiles)
 
+Commandes principales :
+- make help  
+- make install-dev  
+- make ci  
+- make metrics-all  
+- make build  
+- make deploy-test  
+- make test-smoke  
 
-## 🛠️ Installation
+Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 
-\`\`\`bash
-# Clone (GitLab ou GitHub)
-git clone https://gitlab.com//fabricejumel/Test_simple_calculator_2026.git // TODO
+## 📊 Métriques
 
+Couverture branches : 100%  
+Cyclomatique : ≤ 8  
+Maintenabilité MI : 100/100  
+Halstead Volume : ~150  
+LOC production : 60  
+Tests : 26 méthodes  
+
+## 🔄 Usage avancé
+
+Doctests :
+python -m doctest src/calculator/simple_calculator.py
+
+Benchmark :
+pytest --benchmark-only
+
+Installation TestPyPI :
+make install-test
+
+## 🤝 Contribution
+
+1. Fork  
+2. make install-dev  
+3. make ci  
+4. Pull Request  
+
+## 📦 PyPI
+
+TestPyPI :
+pip install -i https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
+
+Production :
+make deploy-prod
+
+Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
+Fabrice JUMEL — Février 2026
