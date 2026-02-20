@@ -21,10 +21,12 @@ make test-smoke #equivaut a un test rapide en python
 
 ### Test rapide en python
 
+````python
 from calculator import SimpleCalculator
 calc = SimpleCalculator()
 print(calc.fsum(2, 3))        # 5
 print(calc.divide(10, 2))     # 5.0
+````
 
 ## 📁 Structure du projet
 
