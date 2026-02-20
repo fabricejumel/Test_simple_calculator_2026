@@ -5,7 +5,7 @@ Auteur : Fabrice JUMEL (CPE Lyon) — License : Unlicense — Python ≥ 3.10
 ## 🚀 Installation
 
 ### Production
-pip install TestSimpleCalculator_2026_FJ_GITHUB
+pip install --index-url https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
 
 ### Développement
 pip install -e .[test]
