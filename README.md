@@ -3,12 +3,15 @@
 Projet de Mini‑calculatrice Python (+, −, ×, ÷) utilisée pour démonstration de packaging moderne PyPI, couverture de tests complète et CI/CD professionnelle.  
 Auteur : Fabrice JUMEL (CPE Lyon) — License : Unlicense — Python ≥ 3.10
 
-## 🚀 Installation
+## 🚀 Installation pour développement
 
-
-
-### Développement
+```bash
+git clone https://github.com/fabricejumel/Test_simple_calculator_2026.git
+cd Test_simple_calculator_2026
+python3 -m venv .venv 
+source .venv/bin/activate
 pip install -e .[test]
+```
 
 ### Test rapide
 from calculator import SimpleCalculator
