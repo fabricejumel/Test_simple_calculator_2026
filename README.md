@@ -54,51 +54,16 @@ TestSimpleCalculator_2026_FJ_GITHUB/
 ```
 L'element centrale est la classe SimpleCalculator, on notera l'usage des docstrings pour les commentaires. L'utilisation de la gestion des erreurs et la verification des types.
 
-
-```mermaid
-
----
-title: Animal example
----
-classDiagram
-    note "From Duck till Zebra"
-    Animal <|-- Duck
-    note for Duck "can fly\ncan swim\ncan dive\ncan help in debugging"
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-        +String beakColor
-        +swim()
-        +quack()
-    }
-    class Fish{
-        -int sizeInFeet
-        -canEat()
-    }
-    class Zebra{
-        +bool is_wild
-        +run()
-    }
-```mermaid
-
-
-
-```mermaid
-classDiagram
-    class SimpleCalculator {
-        <<service>>
-        +fsum(int, int) int
-        +substract(int, int) int
-        +multiply(int, int) int
-        +divide(int, int) float
-    }
-    
-    note for SimpleCalculator "Strict int inputs\nTypeError non-int\nZeroDivisionError /0"
-```
+````text
++------------------------------+
+|    SimpleCalculator          |
++------------------------------+
+| + fsum(a:int,b:int):int      |
+| + substract(a:int,b:int):int |
+| + multiply(a:int,b:int):int  |
+| + divide(a:int,b:int):float  |
++------------------------------+
+````
 
 ```python
 class SimpleCalculator:
