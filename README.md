@@ -31,7 +31,9 @@ print(calc.divide(10, 2))     # 5.0
 ## 📁 Structure du projet
 ```bash
 TestSimpleCalculator_2026_FJ_GITHUB/
-├── pyproject.toml
+├──.github/
+│   └──workflows
+│      └──main.yml
 ├── Makefile
 ├── README.md
 ├── src/
