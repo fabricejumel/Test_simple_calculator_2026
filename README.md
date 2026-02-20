@@ -136,7 +136,7 @@ class SimpleCalculator:
         return int_a / int_b
 ```
 
-Pour transformer ce code en un package distribuable en  python (pip ) en utilisant les standards actuelelles. On a crée doit avoir la strcuture suivante :
+Pour transformer ce code en un package distribuable en  python (pip ) en utilisant les standards actuelles. On a crée doit avoir la strcuture suivante :
 
 ```bash
 ├── pyproject.toml
