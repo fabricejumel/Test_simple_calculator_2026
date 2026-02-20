@@ -17,7 +17,6 @@ cd Test_simple_calculator_2026
 python3 -m venv .venv 
 source .venv/bin/activate
 pip install -e .[test]
-make test-smoke #equivaut a un test rapide en python
 ```
 
 ### Test rapide en python
@@ -28,6 +27,15 @@ calc = SimpleCalculator()
 print(calc.fsum(2, 3))        # 5
 print(calc.divide(10, 2))     # 5.0
 ````
+ou en bash
+````bash
+python -c "\
+from calculator import SimpleCalculator; \
+c = SimpleCalculator(); \
+assert c.fsum(1, 1) == 2, 'Add échoue'; \
+print('✅ Imports & fonctions OK')"
+````
+
 
 ## 📁 Structure du projet
 ```bash
