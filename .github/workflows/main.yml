@@ -26,6 +26,9 @@ jobs:
         cache-dependency-path: pyproject.toml
     - name: Install & Test
       run: |
+        make install 
+        make test-smoke
+        make uninstall
         make install-dev
         make ci
 
@@ -39,7 +42,6 @@ jobs:
         cache: 'pip'
     - name: Metrics
       run: |
-        make install-dev
         make metrics-all
 
   build:
@@ -75,7 +77,6 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ vars.TESTPYPI_TOKEN }}
       run: |
-        make install-dev
         make deploy-test
 
   deploy-pypi:
@@ -93,6 +94,5 @@ jobs:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
-        make install-dev
         make deploy
         
