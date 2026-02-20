@@ -54,6 +54,7 @@ TestSimpleCalculator_2026_FJ_GITHUB/
 ```
 L'element centrale est la classe SimpleCalculator, on notera l'usage des docstrings pour les commentaires. L'utilisation de la gestion des erreurs et la verification des types.
 
+```mermaid
 classDiagram
     class SimpleCalculator {
         <<service>>
@@ -64,7 +65,7 @@ classDiagram
     }
     
     note for SimpleCalculator "Strict int inputs\nTypeError non-int\nZeroDivisionError /0"
-
+```
 
 ```python
 class SimpleCalculator:
