@@ -1,7 +1,12 @@
 # TestSimpleCalculator_2026_FJ version GITHUB  
 
 Projet de Mini‑calculatrice Python (+, −, ×, ÷) utilisée pour démonstration de packaging moderne PyPI, couverture de tests complète et CI/CD professionnelle.  
-Auteur : Fabrice JUMEL (CPE Lyon) — License : Unlicense — Python ≥ 3.10
+Auteur : Fabrice JUMEL (CPE Lyon) 
+— License : Unlicense 
+
+Requirements: 
+— Python ≥ 3.10
+— Make > 4.0
 
 ## 🚀 Installation pour développement
 
@@ -11,9 +16,11 @@ cd Test_simple_calculator_2026
 python3 -m venv .venv 
 source .venv/bin/activate
 pip install -e .[test]
+make test-smoke #equivaut a un test rapide en python
 ```
 
-### Test rapide
+### Test rapide en python
+
 from calculator import SimpleCalculator
 calc = SimpleCalculator()
 print(calc.fsum(2, 3))        # 5
