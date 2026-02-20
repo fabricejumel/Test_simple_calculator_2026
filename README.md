@@ -195,7 +195,7 @@ pythonpath = ["src"]
 
 ## 🧪 Tests unitaires (100% coverage)
 
-[Test](tests/test_simple_calculator) 
+[Test](tests/test_simple_calculator.py) 
 
 
 26 tests unittest couvrant 100% des branches :
