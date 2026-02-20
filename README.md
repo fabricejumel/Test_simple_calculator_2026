@@ -163,8 +163,8 @@ que l'on peut lancer avec une commande make
 make test
 ```
 
-## 🔧 Makefile (20+ commandes utiles)
-Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utilisé un script shell ou faire des appels "systemes" en python.  Chaque choix a ses avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant.
+## 🔧 Makefile
+Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utiliser un script shell ou faire des appels "systemes" en python.  Chaque choix a ces avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant mais il est pertinent d'avoir un equiavlent qui servira ensuite dans le processus d'integration continue
 
 Commandes principales :
 - make help  
@@ -186,16 +186,6 @@ Halstead Volume : ~150
 LOC production : 60  
 Tests : 26 méthodes  
 
-## 🔄 Usage avancé
-
-Doctests :
-python -m doctest src/calculator/simple_calculator.py
-
-Benchmark :
-pytest --benchmark-only
-
-Installation TestPyPI :
-make install-test
 
 ## 🤝 Contribution
 
