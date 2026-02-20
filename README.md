@@ -190,7 +190,13 @@ testpaths = ["tests"]
 pythonpath = ["src"]
 ````
 
+
+
+
 ## 🧪 Tests unitaires (100% coverage)
+
+[Test](tests/test_simple_calculator) 
+
 
 26 tests unittest couvrant 100% des branches :
 - Cas valides : positifs, négatifs, zéros, grands nombres  
