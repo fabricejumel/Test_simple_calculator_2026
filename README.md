@@ -1,6 +1,6 @@
 # Calculator Version GITHUB
 
-> Calculatrice simple - CI/CD multi-plateforme (GitHub)
+> Calculatrice simple - CI/CD (GitHub)
 
 ## 🚀 CI/CD
 
