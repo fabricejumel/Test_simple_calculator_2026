@@ -123,7 +123,7 @@ test-smoke: install
 	python -c "\
 from calculator import SimpleCalculator; \
 c = SimpleCalculator(); \
-assert c.add(1, 1) == 2, 'Add échoue'; \
+assert c.fsum(1, 1) == 2, 'Add échoue'; \
 print('✅ Imports & fonctions OK')"
 	@echo "🎉 Smoke test passé !"
 
