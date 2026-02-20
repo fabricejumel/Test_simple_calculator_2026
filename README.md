@@ -56,6 +56,7 @@ L'element centrale est la classe SimpleCalculator, on notera l'usage des docstri
 
 
 ```mermaid
+
 ---
 title: Animal example
 ---
@@ -83,6 +84,8 @@ classDiagram
         +run()
     }
 ```mermaid
+
+
 
 ```mermaid
 classDiagram
