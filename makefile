@@ -3,7 +3,7 @@
 help:
 	@echo "Installation:"
 	@echo "  make install      - Installation production"
-    @echo "  make test-smoke     -Lance un test simple en environnement production"
+	@echo "  make test-smoke   - Lance un test simple en environnement production"
 	@echo "  make install-dev  - Installation développement"
 	@echo "  make uninstall    - Désinstalle package"
 
