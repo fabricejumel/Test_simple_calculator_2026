@@ -29,7 +29,7 @@ print(calc.divide(10, 2))     # 5.0
 ````
 
 ## 📁 Structure du projet
-
+```bash
 TestSimpleCalculator_2026_FJ_GITHUB/
 ├── pyproject.toml
 ├── Makefile
@@ -40,6 +40,7 @@ TestSimpleCalculator_2026_FJ_GITHUB/
 │       └── simple_calculator.py
 └── tests/
     └── test_simple_calculator.py
+```
 
 ## 🧮 Fonctionnalités
 
