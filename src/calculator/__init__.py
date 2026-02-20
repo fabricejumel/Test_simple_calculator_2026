@@ -1,4 +1,5 @@
-"""TestSimpleCalculatorBx - Simple calculator for packaging demo.
+"""calculator__init__.py
+
 
 Author: Fabrice Jumel
 License: Unlicense
