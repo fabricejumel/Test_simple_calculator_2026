@@ -54,6 +54,18 @@ TestSimpleCalculator_2026_FJ_GITHUB/
 ```
 L'element centrale est la classe SimpleCalculator, on notera l'usage des docstrings pour les commentaires. L'utilisation de la gestion des erreurs et la verification des types.
 
+classDiagram
+    class SimpleCalculator {
+        <<service>>
+        +fsum(int, int) int
+        +substract(int, int) int
+        +multiply(int, int) int
+        +divide(int, int) float
+    }
+    
+    note for SimpleCalculator "Strict int inputs\nTypeError non-int\nZeroDivisionError /0"
+
+
 ```python
 class SimpleCalculator:
     """Calculatrice simple (+, -, *, /) avec validation entrées."""
