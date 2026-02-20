@@ -3,7 +3,7 @@
 help:
 	@echo "Installation:"
 	@echo "  make install      - Installation production"
-    @echo "  make testsmoke     -Lance un test simple en environnement production"
+    @echo "  make test-smoke     -Lance un test simple en environnement production"
 	@echo "  make install-dev  - Installation développement"
 	@echo "  make uninstall    - Désinstalle package"
 
@@ -119,7 +119,7 @@ ci: format-check lint test
 
 
 
-smoke-test: install  # Dépend de make install
+test-smoke: install  # Dépend de make install
 	@echo "🧪 Smoke test installation prod..."
 	python -c "
 from $(PACKAGE_MODULE) import $(MAIN_FUNC)  # e.g. calculator, add
