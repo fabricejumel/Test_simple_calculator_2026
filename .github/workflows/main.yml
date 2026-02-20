@@ -42,6 +42,7 @@ jobs:
         cache: 'pip'
     - name: Metrics
       run: |
+        make install-dev
         make metrics-all
 
   build:
