@@ -118,15 +118,15 @@ ci: format-check lint test
 	@echo "✅ Pipeline CI OK"
 
 
-
-test-smoke: install  # Dépend de make install
+test-smoke: install
 	@echo "🧪 Smoke test installation prod..."
-	python -c "
-from $(PACKAGE_MODULE) import $(MAIN_FUNC)  # e.g. calculator, add
-assert $(MAIN_FUNC)(1,1) == 2
-	print('✅ Imports & fonctions OK')
-	"
+	python -c "\
+from calculator import SimpleCalculator; \
+c = SimpleCalculator(); \
+assert c.add(1, 1) == 2, 'Add échoue'; \
+print('✅ Imports & fonctions OK')"
 	@echo "🎉 Smoke test passé !"
+
 
 ##################################################
 # BUILD & DEPLOY
