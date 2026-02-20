@@ -35,7 +35,7 @@ TestSimpleCalculator_2026_FJ_GITHUB/
 ├──.github/
 │   └──workflows
 │      └──main.yml
-├── Makefile
+├── makefile
 ├── README.md
 ├── src/
 │   └── calculator/
@@ -139,7 +139,29 @@ Caractéristiques :
 - Vérification des types (assertIsInstance)
 
 Commande :
+
+```bash
+pytest
+```
+ou 
+```bash
+python -m pytest
+```
+ou des variantes , nous avons dans notre cas fait ce choix :
+
+```bash
+python -m pytest -v \
+                --cov=src/calculator \
+                --cov-branch \
+                --cov-report=term-missing \
+                --cov-report=xml \
+                --cov-fail-under=95
+```
+que l'on peut lancer avec une commande make
+
+```bash
 make test
+```
 
 ## 🔧 Makefile (20+ commandes utiles)
 
