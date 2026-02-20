@@ -3,12 +3,13 @@
 help:
 	@echo "Installation:"
 	@echo "  make install      - Installation production"
+    @echo "  make testsmoke     -Lance un test simple en environnement production"
 	@echo "  make install-dev  - Installation développement"
 	@echo "  make uninstall    - Désinstalle package"
+
 	@echo ""
 	@echo "Commandes Développement: (nécessite l'installtion en mode développement)"
 	@echo "  make test         - Lance tests"
-    @echo "  make testsmoke     -Lance un test simple en environnement production"
 	@echo "  make lint         - Vérifie qualité"
 	@echo "  make format-check - Vérifie formatage code"
 	@echo "  make format       - Formate code"
