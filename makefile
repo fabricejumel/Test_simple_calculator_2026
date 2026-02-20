@@ -175,7 +175,7 @@ install-test:
 	@echo "📥 Installation depuis TestPyPI..."
 	pip install --index-url https://test.pypi.org/simple/ \
 		--extra-index-url https://pypi.org/simple \
-		TestSimpleCalculator_2026_FJ
+		TestSimpleCalculator_2026_FJ_GITHUB
 
 clean:
 	rm -rf .pytest_cache .coverage coverage.xml htmlcov/ 
