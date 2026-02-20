@@ -43,6 +43,7 @@ TestSimpleCalculator_2026_FJ_GITHUB/
 └── tests/
     └── test_simple_calculator.py
 ```
+L'element centrale est la classe SimpleCalculator, on notera l'usage des docstrings pour les commentaires. L'utilisation de la gesiton des erreurs et la verification des types.
 
 ```python
 class SimpleCalculator:
