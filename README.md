@@ -164,6 +164,7 @@ make test
 ```
 
 ## 🔧 Makefile (20+ commandes utiles)
+Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utilisé un script shell ou faire des appels "systemes" en python.  Chaque choix a ses avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant.
 
 Commandes principales :
 - make help  
