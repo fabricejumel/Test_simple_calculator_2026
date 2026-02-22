@@ -328,17 +328,13 @@ Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 ### ⚖️ **Comparaison des alternatives**
 | Outil     | Avantages                                      | Inconvénients                          | Quand choisir                  |
 |:---------|:-----------------------------------------------|:---------------------------------------|:-------------------------------|
-| **make**  | CI/CD natif, cache intelligent, `make help`    | Courbe d'apprentissage                 | **Projets complexes / CI** ⭐   |
+| **make**  | CI/CD natif, cache intelligent, `make help`    | Courbe d'apprentissage                 | **Projets complexes / CI**    |
 | **bash**  | Simple, rapide, natif Linux                    | Pas de cache, répétitif, erreurs silencieuses | Scripts locaux jetables     |
 | **poetry**| Dépendances Python propres, `poetry run`       | Limité Python, pas de `deploy-test`    | Packages Python purs           |
 | **just**  | Moderne, `just --help`, syntaxe YAML-like      | Moins répandu que `make`               | Alternative trendy             |
 | **Python**| Langage familier, logging pro, cross-platform  | Réécriture complète, pas de cache natif | **un seul langage**     |
-| **uv**    | **10x plus rapide**, remplace pip/poetry/venv, `uv sync` | Écosystème jeune (2026)                | **Nouveaux projets 2026** 🔥   |
+| **uv**    | **10x plus rapide**, remplace pip/poetry/venv, `uv sync` | Écosystème jeune (2026)                | **Nouveaux projets 2026**    |
 
-
-
-
-### 🚀 **Les cibles sont parfaites !**
 
 
 ## 📊 Métriques
