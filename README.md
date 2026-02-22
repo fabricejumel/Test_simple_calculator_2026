@@ -631,12 +631,15 @@ Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
    - Analyse des métriques (`make metrics-all`)
 
 3. **Résultats** : chaque job indique `success` ou `failure` dans GitHub, avec liens vers les logs détaillés.
-4. **Rapport global** : badge de CI dans le README indiquant l’état du build.
 5. **Artefacts** : on peut recuperer sur github  les builds du projets générés pendant la phase de ci/cd
    
 > Le CI garantit que le code intégré respecte les standards définis et reste fonctionnel automatiquement, sans intervention manuelle.
 
-
+# Améliorations possibles
+   - gestion automatique des versions des fichiers et du package
+   - utilisation de poetry et ou uv
+   - generation d'un rapport de test comme artefact
+   - utilisation des logs (logging) dans le code 
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
 Fabrice JUMEL — Février 2026
