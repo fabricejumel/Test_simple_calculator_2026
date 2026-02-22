@@ -328,7 +328,7 @@ Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 ### ⚖️ **Comparaison des alternatives**
 | **Outil** | **Avantages** | **Inconvénients** | **Quand choisir** |
 |:---------|:-------------|:-----------------|:-----------------|
-| `make`   | CI/CD natif, cache, `help` | Courbe d'apprentissage | **Projets pro / CI** ⭐ |
+| `make`   | CI/CD natif, cache, `help` | Courbe d'apprentissage, dépendance de make | **Projets complexes / CI** |
 | `bash`   | Simple, rapide | Pas de cache, répétitif | Scripts locaux |
 | `poetry` | Python-only | Pas de `deploy-test` | Packages Python purs |
 | `just`   | Moderne, `just --help` | Moins répandu que `make` | Alternative trendy |
