@@ -387,8 +387,162 @@ Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 
 
 
-## 📊 Métriques
 
+## 📊 Métriques suppllémentaires à  titre  indicatives
+````bash
+make metrics-all
+════════════════════════════════════════════════════════════
+📈 ANALYSE COMPLÈTE MÉTRIQUES CODE
+════════════════════════════════════════════════════════════
+
+make[1]: Entering directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+📊 Complexité cyclomatique (McCabe):
+src/calculator/simple_calculator.py
+    C 10:0 SimpleCalculator - A (4)
+    M 63:4 SimpleCalculator.divide - A (4)
+    M 13:4 SimpleCalculator.fsum - A (3)
+    M 39:4 SimpleCalculator.substract - A (3)
+    M 51:4 SimpleCalculator.multiply - A (3)
+tests/test_simple_calculator.py
+    C 10:0 TestSimpleCalculator - A (2)
+    M 13:4 TestSimpleCalculator.setUp - A (1)
+    M 18:4 TestSimpleCalculator.test_fsum_valid_positive - A (1)
+    M 24:4 TestSimpleCalculator.test_fsum_valid_negative - A (1)
+    M 30:4 TestSimpleCalculator.test_fsum_valid_zero - A (1)
+    M 36:4 TestSimpleCalculator.test_fsum_invalid_float - A (1)
+    M 45:4 TestSimpleCalculator.test_fsum_invalid_string - A (1)
+    M 54:4 TestSimpleCalculator.test_fsum_invalid_none - A (1)
+    M 61:4 TestSimpleCalculator.test_fsum_invalid_bool - A (1)
+    M 70:4 TestSimpleCalculator.test_substract_valid_positive - A (1)
+    M 76:4 TestSimpleCalculator.test_substract_valid_negative - A (1)
+    M 82:4 TestSimpleCalculator.test_substract_valid_zero - A (1)
+    M 88:4 TestSimpleCalculator.test_substract_invalid_types - A (1)
+    M 96:4 TestSimpleCalculator.test_multiply_valid_positive - A (1)
+    M 102:4 TestSimpleCalculator.test_multiply_valid_negative - A (1)
+    M 108:4 TestSimpleCalculator.test_multiply_valid_zero - A (1)
+    M 114:4 TestSimpleCalculator.test_multiply_valid_one - A (1)
+    M 120:4 TestSimpleCalculator.test_multiply_invalid_types - A (1)
+    M 128:4 TestSimpleCalculator.test_divide_valid_positive - A (1)
+    M 134:4 TestSimpleCalculator.test_divide_valid_result_float - A (1)
+    M 140:4 TestSimpleCalculator.test_divide_valid_negative - A (1)
+    M 146:4 TestSimpleCalculator.test_divide_valid_by_one - A (1)
+    M 151:4 TestSimpleCalculator.test_divide_zero_denominator - A (1)
+    M 160:4 TestSimpleCalculator.test_divide_zero_numerator - A (1)
+    M 165:4 TestSimpleCalculator.test_divide_invalid_float - A (1)
+    M 172:4 TestSimpleCalculator.test_divide_invalid_string - A (1)
+    M 180:4 TestSimpleCalculator.test_large_numbers - A (1)
+    M 186:4 TestSimpleCalculator.test_type_consistency - A (1)
+
+33 blocks (classes, functions, methods) analyzed.
+Average complexity: A (1.393939393939394)
+
+make[1]: Leaving directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+make[1]: Entering directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+🔧 Index de maintenabilité:
+src/calculator/__init__.py - A (100.00)
+src/calculator/simple_calculator.py - A (72.60)
+tests/test_simple_calculator.py - A (50.06)
+
+make[1]: Leaving directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+make[1]: Entering directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+📏 Métriques brutes (LOC):
+src/calculator/__init__.py
+    LOC: 11
+    LLOC: 4
+    SLOC: 3
+    Comments: 0
+    Single comments: 0
+    Multi: 4
+    Blank: 4
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 36%
+src/calculator/simple_calculator.py
+    LOC: 76
+    LLOC: 25
+    SLOC: 27
+    Comments: 2
+    Single comments: 3
+    Multi: 32
+    Blank: 14
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 7%
+        (C + M % L): 45%
+tests/test_simple_calculator.py
+    LOC: 198
+    LLOC: 152
+    SLOC: 123
+    Comments: 11
+    Single comments: 38
+    Multi: 3
+    Blank: 34
+    - Comment Stats
+        (C % L): 6%
+        (C % S): 9%
+        (C + M % L): 7%
+** Total **
+    LOC: 285
+    LLOC: 181
+    SLOC: 153
+    Comments: 13
+    Single comments: 41
+    Multi: 39
+    Blank: 52
+    - Comment Stats
+        (C % L): 5%
+        (C % S): 8%
+        (C + M % L): 18%
+
+make[1]: Leaving directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+make[1]: Entering directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+🧮 Métriques Halstead:
+src/calculator/__init__.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+src/calculator/simple_calculator.py:
+    h1: 7
+    h2: 25
+    N1: 17
+    N2: 26
+    vocabulary: 32
+    length: 43
+    calculated_length: 135.74788919877133
+    volume: 215.0
+    difficulty: 3.64
+    effort: 782.6
+    time: 43.47777777777778
+    bugs: 0.07166666666666667
+tests/test_simple_calculator.py:
+    h1: 3
+    h2: 23
+    N1: 30
+    N2: 32
+    vocabulary: 26
+    length: 62
+    calculated_length: 108.79681249147477
+    volume: 291.42726252474773
+    difficulty: 2.0869565217391304
+    effort: 608.196026138604
+    time: 33.78866811881133
+    bugs: 0.09714242084158257
+
+make[1]: Leaving directory '/home/astro/wp_admco_2026/Test_simple_calculator_2026'
+════════════════════════════════════════════════════════════
+✅ Analyse métriques terminée
+════════════════════════════════════════════════════════════
+````
 Couverture branches : 100%  
 Cyclomatique : ≤ 8  
 Maintenabilité MI : 100/100  
