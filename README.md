@@ -21,9 +21,10 @@ pip install -e .[test]
 ## Pour info,  Finalité, déploiment sur PyPI (on se limitera à la version test de Pypi)
 
 Usage direct pour l'installation
+```bash
 pip install -i https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
-
-## Autre installation possible directmeent à partir de gitlab
+```
+## Pour info, autre installation possible directmeent à partir de gitlab
 
 ```bash
 pip install git+https://github.com/fabricejumel/Test_simple_calculator_2026.git@main#egg=TestSimpleCalculator_2026_FJ_GITHU
