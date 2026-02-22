@@ -234,6 +234,17 @@ testpaths = ["tests"]
 pythonpath = ["src"]
 ````
 
+### Structure et choix techniques :
+**Configuration moderne** (PEP 518/621) compatible **setuptools + tous outils**.
+
+| **Section** | **Rôle** | **Choix justifiés** |
+|:------------|----------|---------------------|
+| `[build-system]` | Backend build | `setuptools` = standard, mature |
+| `[project]` | Métadonnées PyPI | Complet : version, auteur, license, Python min |
+| `requires-python = ">=3.10"` | Compatibilité | Aligne CI (3.10/3.12) |
+| `[project.optional-dependencies.test]` | Dev deps | `test=` groupe → `pip install -e '.[test]'` |
+| `[tool.setuptools.packages.find]` | Scan auto | `src/` layout → moderne |
+| `[tool.pytest.ini_options]` | Config pytest | `testpaths=tests`, `pythonpath=src` |
 
 
 
