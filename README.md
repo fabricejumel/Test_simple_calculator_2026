@@ -297,6 +297,19 @@ Required test coverage of 95% reached. Total coverage: 100.00%
 ========================================== 26 passed in 0.12s ===========================================
 ```
 
+On voit apparaître plusieurs **100 %** de couverture :
+
+1. **Premier 100 %** : Tous les **tests définis** ont été **exécutés avec succès** 
+2. **Dernier 100 %** : **100 % des lignes de code** ont été **exercées** par les tests (couverture de code) 
+
+**C'est beaucoup plus fort !** Nous avons fixé un **seuil de rejet à 95 %**.
+
+**Pourquoi c'est important ?**
+- Si on ajoute une **nouvelle fonction** sans tests associés → couverture < 95 % → **rejet automatique**
+- Les anciens tests restent à 100 %, mais la **nouvelle fonctionnalité** est détectée comme non testée
+- **Garantit** que chaque nouvelle feature a ses tests dédiés
+
+
 ## 🔧 Makefile
 Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utiliser un script shell ou faire des appels "systemes" en python.  Chaque choix a ces avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant mais il est pertinent d'avoir un equiavlent qui servira ensuite dans le processus d'integration continue
 
