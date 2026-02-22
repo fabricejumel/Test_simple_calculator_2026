@@ -372,6 +372,8 @@ Pyramide classique des tests logiciels :
 ## 🔧 Makefile
 Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utiliser un script shell ou faire des appels "systemes" en python.  Chaque choix a ces avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant mais il est pertinent d'avoir un equivalent qui servira ensuite dans le processus d'integration continue. DEs outil comme poetry et uv permettent d'automatiser aussi la partie de création du toml et de gestion du venv.
 
+[makefile](makefile)
+
 Commandes principales :
 - make help  
 - make install-dev  
@@ -381,7 +383,6 @@ Commandes principales :
 - make deploy-test  
 - make test-smoke  
 
-Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 
 
 ### ⚖️ **Comparaison des alternatives**
@@ -622,7 +623,7 @@ make lint && make test && make build && make deploy-test
 Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
 
 1. **Détection de modification** : push sur la branche principale ou ouverture d'une PR.
-2. **Exécution des jobs** définis dans `.github/workflows/ci.yml` :
+2. **Exécution des jobs** définis dans [.github/workflows/main.yml](.github/workflows/main.yml) :
    - Installation des dépendances
    - Exécution des tests unitaires (`make test`)
    - Analyse des métriques (`make metrics-all`)
@@ -632,9 +633,7 @@ Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
 
 > Le CI garantit que le code intégré respecte les standards définis et reste fonctionnel automatiquement, sans intervention manuelle.
 
-```markdown
-[
-```
+
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
 Fabrice JUMEL — Février 2026
