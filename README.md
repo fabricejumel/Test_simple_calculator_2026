@@ -587,7 +587,50 @@ make[1]: Leaving directory '/home/astro/wp_admco_2026/Test_simple_calculator_202
 ✅ Analyse métriques terminée
 ════════════════════════════════════════════════════════════
 ````
+## Intégration Continue (CI)
 
+L'intégration continue (CI) est une pratique qui consiste à automatiser le processus de construction, de tests et de validation du code à chaque modification.  
+
+### Objectifs principaux
+- Détecter rapidement les erreurs : chaque commit déclenche automatiquement les tests, ce qui évite que du code cassé soit intégré dans la branche principale.
+- Assurer la qualité : l'analyse statique (linting, métriques, couverture de tests, etc.) est effectuée automatiquement.
+- Standardiser le processus : tous les développeurs utilisent le même pipeline de vérification.
+- Documenter et versionner les résultats : rapports de tests et métriques générés et archivés.
+
+### Pipeline manuel avec Make
+Avant de configurer le CI automatique, il est possible de **simuler l’enchaînement des tâches à la main** :
+
+```bash
+make lint
+make test
+make build
+make deploy-test 
+```
+on peut tester aussi les métriques additionnelles :
+```bash
+make metrics-all
+
+si on veut conditionner le lancement d'une étape par la réussite de précédente :
+
+```bash
+make lint && make test && make build && make deploy-test
+```
+
+> Chaque étape génère un rapport détaillé qui peut être consulté pour valider le code.
+
+### Pipeline CI GitHub
+Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
+
+1. **Détection de modification** : push sur la branche principale ou ouverture d'une PR.
+2. **Exécution des jobs** définis dans `.github/workflows/ci.yml` :
+   - Installation des dépendances
+   - Exécution des tests unitaires (`make test`)
+   - Analyse des métriques (`make metrics-all`)
+   - Vérification du style et linting
+3. **Résultats** : chaque job indique `success` ou `failure` dans GitHub, avec liens vers les logs détaillés.
+4. **Rapport global** : badge de CI dans le README indiquant l’état du build.
+
+> Le CI garantit que le code intégré respecte les standards définis et reste fonctionnel automatiquement, sans intervention manuelle.
 
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
