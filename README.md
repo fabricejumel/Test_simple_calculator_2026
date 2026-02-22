@@ -423,7 +423,7 @@ Pipeline CI/CD : format → lint → tests → build → TestPyPI.
   - Charge cognitive → Halstead
 - Conclusion : code simple, maintenable, lisible, peu complexe, avec tests nombreux
 
-Le détails: 
+Le détail: 
 ````bash
 make metrics-all
 ════════════════════════════════════════════════════════════
