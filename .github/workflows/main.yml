@@ -30,6 +30,7 @@ jobs:
         make test-smoke
         make uninstall
         make install-dev
+        make lint 
         make ci
 
   metrics:
