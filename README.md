@@ -634,7 +634,6 @@ Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
 
 ```markdown
 [
-[
 ```
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
