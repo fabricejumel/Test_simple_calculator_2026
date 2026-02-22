@@ -9,7 +9,7 @@ Requirements:
 — Python ≥ 3.10
 — Make > 4.0
 
-## 🚀 Installation pour développement
+## Installation pour développement
 
 ```bash
 git clone https://github.com/fabricejumel/Test_simple_calculator_2026.git
