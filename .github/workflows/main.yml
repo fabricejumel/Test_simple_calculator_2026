@@ -11,7 +11,7 @@ on:
     types: [ published ]
 
 jobs:
-  test:
+  install-lint-test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
