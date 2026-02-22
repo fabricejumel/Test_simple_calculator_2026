@@ -174,7 +174,7 @@ __all__ = ["SimpleCalculator"]
 Cela permet de ne pas écrire ensuite 
 ````python
 from calculator.simple_calculator import SimpleCalculator
-````python
+````
 mais plus simplement
 ````python
 from calculator import SimpleCalculator
