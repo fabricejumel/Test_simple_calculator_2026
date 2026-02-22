@@ -623,13 +623,13 @@ make lint && make test && make build && make deploy-test
 ### Pipeline CI GitHub
 Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
 
-1. **Détection de modification** : push sur la branche principale ou ouverture d'une PR.
+1. **Détection de modification** : push sur la branche principale (hors juste modification du README.md) ou ouverture d'une Pull Request.
 2. **Exécution des jobs** définis dans [.github/workflows/main.yml](.github/workflows/main.yml) :
-   - Installation des dépendances
-   - Vérification du style et linting
-   - Exécution des tests unitaires (`make test`)
+   - Installation des dépendances 
+   - Vérification du style et linting (test en //  en python 3.10 et 3.12)
+   - Exécution des tests unitaires (`make test`) (test en //  en python 3.10 et 3.12)
    - Analyse des métriques (`make metrics-all`)
-   
+
 3. **Résultats** : chaque job indique `success` ou `failure` dans GitHub, avec liens vers les logs détaillés.
 4. **Rapport global** : badge de CI dans le README indiquant l’état du build.
 5. **Artefacts** : on peut recuperer sur github  les builds du projets générés pendant la phase de ci/cd
