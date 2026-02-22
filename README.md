@@ -146,7 +146,7 @@ class SimpleCalculator:
         return int_a / int_b
 ```
 
-Pour transformer ce code en un package distribuable en  python (pip ) en utilisant les standards actuelles. On a crée doit avoir la strcuture suivante :
+Pour transformer ce code en un package distribuable en  python (pip ) en utilisant les standards actuelles. On a crée la strcuture suivante :
 
 ```bash
 ├── pyproject.toml
@@ -167,12 +167,21 @@ License: Unlicense
 
 from .simple_calculator import SimpleCalculator
 
-__version__ = "0.0.1"
+__version__ = "0.0.11"
 __all__ = ["SimpleCalculator"]
 
 ````
+Cela permet de ne pas écrire ensuite 
+````python
+from calculator.simple_calculator import SimpleCalculator
+````python
+mais plus simplement
+````python
+from calculator import SimpleCalculator
+````
 
-et 
+le __all__ = ["SimpleCalculator"] permet de limiter l'API, par exemple si on avait d'autres classes qui ne doivent pas être utilisés en dehors des appels internes du module lui même .
+
 ````python
 """pyproject.toml"""
 
