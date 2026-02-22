@@ -609,7 +609,7 @@ make deploy-test
 on peut tester aussi les métriques additionnelles :
 ```bash
 make metrics-all
-
+```
 si on veut conditionner le lancement d'une étape par la réussite de précédente :
 
 ```bash
@@ -632,6 +632,10 @@ Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
 
 > Le CI garantit que le code intégré respecte les standards définis et reste fonctionnel automatiquement, sans intervention manuelle.
 
+```markdown
+[
+[
+```
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
 Fabrice JUMEL — Février 2026
