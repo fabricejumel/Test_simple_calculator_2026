@@ -1,4 +1,4 @@
-# TestSimpleCalculator_2026_FJ version GITHUB  
+# TestSimpleCalculator_2026_FJ version GITHUB   
 
 Projet de Mini‑calculatrice Python (+, −, ×, ÷) utilisée pour démonstration de packaging moderne PyPI, couverture de tests complète et CI/CD professionnelle.  
 Auteur : Fabrice JUMEL (CPE Lyon) 
