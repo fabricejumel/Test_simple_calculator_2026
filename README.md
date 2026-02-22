@@ -324,6 +324,20 @@ Commandes principales :
 
 Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 
+
+### ⚖️ **Comparaison des alternatives**
+| **Outil** | **Avantages** | **Inconvénients** | **Quand choisir** |
+|:---------|:-------------|:-----------------|:-----------------|
+| `make`   | CI/CD natif, cache, `help` | Courbe d'apprentissage | **Projets pro / CI** ⭐ |
+| `bash`   | Simple, rapide | Pas de cache, répétitif | Scripts locaux |
+| `poetry` | Python-only | Pas de `deploy-test` | Packages Python purs |
+| `just`   | Moderne, `just --help` | Moins répandu que `make` | Alternative trendy |
+
+
+
+### 🚀 **Les cibles sont parfaites !**
+
+
 ## 📊 Métriques
 
 Couverture branches : 100%  
