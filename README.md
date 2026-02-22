@@ -311,7 +311,7 @@ On voit apparaître plusieurs **100 %** de couverture :
 
 
 ## 🔧 Makefile
-Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utiliser un script shell ou faire des appels "systemes" en python.  Chaque choix a ces avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant mais il est pertinent d'avoir un equiavlent qui servira ensuite dans le processus d'integration continue
+Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utiliser un script shell ou faire des appels "systemes" en python.  Chaque choix a ces avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant mais il est pertinent d'avoir un equivalent qui servira ensuite dans le processus d'integration continue. DEs outil comme poetry et uv permettent d'automatiser aussi la partie de création du toml et de gestion du venv.
 
 Commandes principales :
 - make help  
@@ -326,12 +326,15 @@ Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 
 
 ### ⚖️ **Comparaison des alternatives**
-| **Outil** | **Avantages** | **Inconvénients** | **Quand choisir** |
-|:---------|:-------------|:-----------------|:-----------------|
-| `make`   | CI/CD natif, cache, `help` | Courbe d'apprentissage, dépendance de make | **Projets complexes / CI** |
-| `bash`   | Simple, rapide | Pas de cache, répétitif | Scripts locaux |
-| `poetry` | Python-only | Pas de `deploy-test` | Packages Python purs |
-| `just`   | Moderne, `just --help` | Moins répandu que `make` | Alternative trendy |
+| Outil     | Avantages                                      | Inconvénients                          | Quand choisir                  |
+|:---------|:-----------------------------------------------|:---------------------------------------|:-------------------------------|
+| **make**  | CI/CD natif, cache intelligent, `make help`    | Courbe d'apprentissage                 | **Projets complexes / CI** ⭐   |
+| **bash**  | Simple, rapide, natif Linux                    | Pas de cache, répétitif, erreurs silencieuses | Scripts locaux jetables     |
+| **poetry**| Dépendances Python propres, `poetry run`       | Limité Python, pas de `deploy-test`    | Packages Python purs           |
+| **just**  | Moderne, `just --help`, syntaxe YAML-like      | Moins répandu que `make`               | Alternative trendy             |
+| **Python**| Langage familier, logging pro, cross-platform  | Réécriture complète, pas de cache natif | **un seul langage**     |
+| **uv**    | **10x plus rapide**, remplace pip/poetry/venv, `uv sync` | Écosystème jeune (2026)                | **Nouveaux projets 2026** 🔥   |
+
 
 
 
