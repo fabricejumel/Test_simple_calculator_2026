@@ -18,7 +18,16 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .[test]
 ```
+## Pour info,  Finalité, déploiment sur PyPI (on se limitera à la version test de Pypi)
 
+Usage direct pour l'installation
+pip install -i https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
+
+## Autre installation possible directmeent à partir de gitlab
+
+```bash
+pip install git+https://github.com/fabricejumel/Test_simple_calculator_2026.git@main#egg=TestSimpleCalculator_2026_FJ_GITHU
+```
 ### Test rapide en python
 
 ````python
@@ -584,11 +593,6 @@ Maintenabilité MI : 100/100
 Halstead Volume : ~150  
 LOC production : 60  
 Tests : 26 méthodes  
-
-## 📦 PyPI (test)
-Usage direct pour l'installation
-
-pip install -i https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
 
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
