@@ -182,6 +182,45 @@ from calculator import SimpleCalculator
 
 le __all__ = ["SimpleCalculator"] permet de limiter l'API, par exemple si on avait d'autres classes qui ne doivent pas être utilisés en dehors des appels internes du module lui même .
 
+# Pourquoi pyproject.toml ?
+
+**Format standard moderne** pour la configuration de projet Python (PEP 518/621).
+
+## Avantages clés
+- Lisibilité maximale : Pas d'indentation, syntaxe évidente
+- Un seul fichier : Centralise toutes les métadonnées du projet
+- Tool-agnostic : Compatible **Poetry**, **uv**, **Flit**, **Hatch**, **pip**
+- Lockfile séparé : Garantit reproductibilité des environnements
+
+## Outils compatibles
+| Outil   | Commande                 | Vitesse  | Usage recommandé |
+|:--------|--------------------------|----------|------------------|
+| **uv**  | `uv sync`               | 10x pip  | Nouveaux projets |
+| **Poetry** | `poetry install`      | Standard | Écosystème mature |
+| **pip** | `pip install -e .`      | Basique  | Minimaliste |
+
+## Comparaison avec ancien format
+```
+pyproject.toml  → Moderne, standard 2026
+setup.py        → Obsolète (code Python verbeux)
+requirements.txt → Pas de métadonnées projet
+```
+
+## Exemple
+```toml
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "simple-calculator"
+version = "1.0.0"
+dependencies = ["pytest>=7.0"]
+```
+
+Verdict : Choix universel et pérenne pour tout outil moderne
+
+
 ````python
 """pyproject.toml"""
 
