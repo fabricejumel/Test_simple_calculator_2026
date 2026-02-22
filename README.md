@@ -18,7 +18,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .[test]
 ```
-## Pour info,  Finalité, déploiment sur PyPI (on se limitera à la version test de Pypi)
+## Pour info,  finalité, déploiment sur PyPI (on se limitera à la version test de Pypi)
 
 Usage direct pour l'installation
 ```bash
