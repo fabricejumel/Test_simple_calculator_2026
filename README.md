@@ -389,6 +389,41 @@ Pipeline CI/CD : format → lint → tests → build → TestPyPI.
 
 
 ## 📊 Métriques suppllémentaires à  titre  indicatives
+
+
+## 1. Complexité cyclomatique (McCabe)
+- Mesure : nombre de chemins possibles dans une fonction (if, for, while, etc.)
+- Observation : toutes les fonctions/classes sont en A (≤4)
+- Interprétation : code simple, facile à tester, faible risque de bugs
+- Message pédagogique : "Un bon code n’est pas intelligent, il est simple."
+
+## 2. Indice de maintenabilité (MI)
+- Mesure : score global basé sur complexité, taille, Halstead et commentaires
+- Observation : code principal 72 (bon), tests 50 (normal)
+- Interprétation : code compréhensible et modifiable dans le temps
+- Message pédagogique : "Le code doit rester maintenable même dans 6 mois."
+
+## 3. LOC (lignes de code)
+- Mesure : taille du code, proportion de code réel vs commentaires
+- Observation : ~150 lignes de code réel, ~18% documentation
+- Interprétation : code de taille adaptée, bonne lisibilité, tests majoritaires
+- Message pédagogique : "La qualité n’est pas liée à la taille, mais un code court est plus maîtrisable."
+
+## 4. Métriques Halstead
+- Mesure : vocabulaire, volume, difficulté, effort mental, bugs estimés
+- Observation : effort faible, bugs estimés < 0.1
+- Interprétation : faible charge cognitive, code facile à comprendre
+- Message pédagogique : "Halstead mesure la 'charge mentale' pour comprendre le code."
+
+## 5. Choix global des métriques
+- Axes couverts :
+  - Structure logique → Complexité cyclomatique
+  - Maintenabilité globale → MI
+  - Taille et lisibilité → LOC
+  - Charge cognitive → Halstead
+- Conclusion : code simple, maintenable, lisible, peu complexe, avec tests nombreux
+
+Le détails: 
 ````bash
 make metrics-all
 ════════════════════════════════════════════════════════════
