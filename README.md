@@ -334,6 +334,31 @@ On voit apparaître plusieurs **100 %** de couverture :
 - Les anciens tests restent à 100 %, mais la **nouvelle fonctionnalité** est détectée comme non testée
 - **Garantit** que chaque nouvelle feature a ses tests dédiés
 
+# Autres types de tests (non retenus)
+
+Pyramide classique des tests logiciels :
+
+| Type              | Objectif                              | Pourquoi NON nécessaire ici ?                    |
+|-------------------|---------------------------------------|-------------------------------------------------|
+| **Intégration**   | Vérifier interactions modules/services | 1 classe, 0 dépendance externe                 |
+| **Système**   | Tester flux complet applicatif        | Calculatrice = 4 méthodes isolées               |
+| **Performance**   | Charge, stress, endurance             | Opérations O(1), pas d'I/O réseau/BD           |
+| **Sécurité**      | Vulnérabilités, injections            | Calculs mathématiques purs                      |
+| **API/Contract**  | Contrats entre services               | Usage library interne uniquement                |
+
+## Justification
+**SimpleCalculator** = **micro-projet pédagogique** (150 lignes, 4 méthodes arithmétiques) :
+- Zéro dépendance externe
+- Opérations purement mathématiques
+- Pas d'état partagé entre méthodes
+- Interface publique simple
+
+**Tests unitaires suffisent à 100%** pour valider :
+- Logique métier (calculs corrects)
+- Robustesse (gestion erreurs)
+- Contrat API (types attendus)
+
+
 
 ## 🔧 Makefile
 Le choix a été fait d'utiliser des commandes type bash  en utilisant la commande make , on aurait pu aussi utiliser un script shell ou faire des appels "systemes" en python.  Chaque choix a ces avantages et inconvenients. Le cas de l'usage de make n'est pas le plus courant mais il est pertinent d'avoir un equivalent qui servira ensuite dans le processus d'integration continue. DEs outil comme poetry et uv permettent d'automatiser aussi la partie de création du toml et de gestion du venv.
