@@ -206,7 +206,7 @@ setup.py        → Obsolète (code Python verbeux)
 requirements.txt → Pas de métadonnées projet
 ```
 
-
+## pyproject.toml de notre package
 ````python
 """pyproject.toml"""
 
