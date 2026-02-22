@@ -587,12 +587,7 @@ make[1]: Leaving directory '/home/astro/wp_admco_2026/Test_simple_calculator_202
 ✅ Analyse métriques terminée
 ════════════════════════════════════════════════════════════
 ````
-Couverture branches : 100%  
-Cyclomatique : ≤ 8  
-Maintenabilité MI : 100/100  
-Halstead Volume : ~150  
-LOC production : 60  
-Tests : 26 méthodes  
+
 
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
