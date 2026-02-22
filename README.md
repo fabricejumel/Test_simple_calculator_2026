@@ -199,26 +199,12 @@ le __all__ = ["SimpleCalculator"] permet de limiter l'API, par exemple si on ava
 | **Poetry** | `poetry install`      | Standard | Écosystème mature |
 | **pip** | `pip install -e .`      | Basique  | Minimaliste |
 
-## Comparaison avec ancien format
+## Comparaison avec les anciens formats
 ```
 pyproject.toml  → Moderne, standard 2026
 setup.py        → Obsolète (code Python verbeux)
 requirements.txt → Pas de métadonnées projet
 ```
-
-## Exemple
-```toml
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project]
-name = "simple-calculator"
-version = "1.0.0"
-dependencies = ["pytest>=7.0"]
-```
-
-Verdict : Choix universel et pérenne pour tout outil moderne
 
 
 ````python
