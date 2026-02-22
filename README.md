@@ -357,17 +357,6 @@ Pyramide classique des tests logiciels :
 | **Sécurité**      | Vulnérabilités, injections            | Calculs mathématiques purs                      |
 | **API/Contract**  | Contrats entre services               | Usage librairie interne uniquement                |
 
-## Justification
-**SimpleCalculator** = **micro-projet pédagogique** (150 lignes, 4 méthodes arithmétiques) :
-- Zéro dépendance externe
-- Opérations purement mathématiques
-- Pas d'état partagé entre méthodes
-- Interface publique simple
-
-**Tests unitaires suffisent à 100%** pour valider :
-- Logique métier (calculs corrects)
-- Robustesse (gestion erreurs)
-- Contrat API (types attendus)
 
 
 
