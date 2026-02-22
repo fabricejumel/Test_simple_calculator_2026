@@ -344,7 +344,7 @@ Pyramide classique des tests logiciels :
 | **Système**   | Tester flux complet applicatif        | Calculatrice = 4 méthodes isolées               |
 | **Performance**   | Charge, stress, endurance             | Opérations O(1), pas d'I/O réseau/BD           |
 | **Sécurité**      | Vulnérabilités, injections            | Calculs mathématiques purs                      |
-| **API/Contract**  | Contrats entre services               | Usage library interne uniquement                |
+| **API/Contract**  | Contrats entre services               | Usage librairie interne uniquement                |
 
 ## Justification
 **SimpleCalculator** = **micro-projet pédagogique** (150 lignes, 4 méthodes arithmétiques) :
