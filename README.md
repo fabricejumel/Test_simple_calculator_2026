@@ -13,6 +13,7 @@ Requirements:
 - [] explication sur les token pypi et usage dans Github aciton
 - [] rajouter les logs
 - [] rajouter peut etre explications pep8 pep20 sur pylint
+- [] rajouter 100% de test avant couverture
 
 
 ## Installation pour développement
