@@ -33,7 +33,7 @@ pip install -i https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
 ## Pour info, autre installation possible directmeent à partir de gitlab
 
 ```bash
-pip install git+https://github.com/fabricejumel/Test_simple_calculator_2026.git@main#egg=TestSimpleCalculator_2026_FJ_GITHU
+pip install git+https://github.com/fabricejumel/Test_simple_calculator_2026.git@main#egg=TestSimpleCalculator_2026_FJ_GITHUB
 ```
 ### Test rapide en python
 
