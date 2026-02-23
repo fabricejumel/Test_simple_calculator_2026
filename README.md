@@ -9,12 +9,6 @@ Requirements:
 — Python ≥ 3.10
 — Make > 4.0
 
-# TODO 
-- [] explication sur les token pypi et usage dans Github aciton
-- [] rajouter les logs
-- [] rajouter peut etre explications pep8 pep20 sur pylint
-- [] rajouter 100% de test avant couverture
-
 
 ## Installation pour développement
 
@@ -646,7 +640,14 @@ Le CI GitHub automatise ces mêmes étapes à chaque commit ou pull request :
    - gestion automatique des versions des fichiers et du package
    - utilisation de poetry et ou uv
    - generation d'un rapport de test comme artefact
-   - utilisation des logs (logging) dans le code 
+   - utilisation des logs (logging) dans le code
+
+# TODO 
+- [] explication sur les token pypi et usage dans Github aciton
+- [] rajouter les logs
+- [] rajouter peut etre explications pep8 pep20 dans pylint
+- [] rajouter 100% de test dans le log avant la couverture par cov
+
 
 Projet pédagogique CPE Lyon — Packaging, tests, CI/CD, métriques.  
 Fabrice JUMEL — Février 2026
