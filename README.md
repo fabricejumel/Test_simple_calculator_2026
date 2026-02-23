@@ -9,6 +9,10 @@ Requirements:
 — Python ≥ 3.10
 — Make > 4.0
 
+# TODO 
+- [] explication sur les token pypi et usage dans Github aciton
+- [] rajouter les logs
+
 ## Installation pour développement
 
 ```bash
