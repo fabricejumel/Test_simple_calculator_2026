@@ -12,6 +12,8 @@ Requirements:
 # TODO 
 - [] explication sur les token pypi et usage dans Github aciton
 - [] rajouter les logs
+- [] rajouter peut etre explications pep8 pep20 sur pylint
+
 
 ## Installation pour développement
 
