@@ -25,7 +25,7 @@ Usage direct pour l'installation
 ```bash
 pip install -i https://test.pypi.org/simple/ TestSimpleCalculator_2026_FJ_GITHUB
 ```
-## Pour info, autre installation possible directmeent à partir de gitlab
+## Pour info, autre installation possible directmeent à partir de github
 
 ```bash
 pip install git+https://github.com/fabricejumel/Test_simple_calculator_2026.git@main#egg=TestSimpleCalculator_2026_FJ_GITHUB
